@@ -1,7 +1,7 @@
 WwwDesign::Application.routes.draw do
   root :to => 'pages#home'
-  get "users/new"
   
+  resources :users
   match '/signup',  :to => 'users#new'
 
   match '/contact', :to => 'pages#contact'
