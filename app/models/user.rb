@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  before_save :default_values
+  def default_values
+    self.salt ||=  Digest::SHA2.hexdigest("#{Time.now.utc}--")
+  end
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
   
@@ -20,6 +24,11 @@ class User < ActiveRecord::Base
     user = find_by_email(email)
     return nil if user.nil?
     return user if user.authenticate(submitted_password)
+  end
+  
+  def self.authenticate_with_salt(id, cookie_salt)
+    user = find_by_id(id)
+    (user && user.salt == cookie_salt) ? user : nil
   end
 end
 
