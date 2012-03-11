@@ -3,6 +3,7 @@ WwwDesign::Application.routes.draw do
   root :to => 'pages#home'
   
   resources :users
+  resources :ads
   resources :sessions, :only => [:new, :create, :destroy]
   
   match '/signup',  :to => 'users#new'

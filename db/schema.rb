@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310094309) do
+ActiveRecord::Schema.define(:version => 20120310161607) do
+
+  create_table "ads", :force => true do |t|
+    t.string   "description"
+    t.string   "image_url"
+    t.string   "price"
+    t.boolean  "available",   :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "ads", ["user_id", "created_at"], :name => "index_ads_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

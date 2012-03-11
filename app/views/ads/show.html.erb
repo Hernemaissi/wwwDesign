@@ -1,0 +1,10 @@
+
+  <img src="<%=@ad.image_url%>" alt="Ad" /><br />
+  Price: <%=@ad.price%><br />
+  Description: <%=@ad.description%><br />
+  <% if @ad.available %>
+    Currently Available<br />
+  <% else %>
+    Currently Taken<br />
+  <% end %>
+  Posted by: <%=@ad.user.name%>

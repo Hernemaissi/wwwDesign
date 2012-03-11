@@ -7,7 +7,10 @@
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+      <% if current_user?(@user) %>
+        <%= link_to "Post new ad", new_ad_path  %>
+      <% end %>
     </td>
   </tr>
 </table>
