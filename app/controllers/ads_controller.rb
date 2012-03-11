@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy, :new, :edit, :update]
+  before_filter :authenticate, :only => [:create, :destroy, :new, :edit, :update, :toggle_available]
 
   def index
     @title = "All ads"
@@ -33,6 +33,18 @@ class AdsController < ApplicationController
   def new
     @ad = Ad.new
     @title = "Post new ad"
+  end
+  
+  def toggle_available
+     @ad = Ad.find(params[:id])
+     if current_user?(@ad.user) && request.post?
+       @ad.available = (@ad.available?) ? false : true
+       @ad.save
+       flash[:success] = "Availability toggled"
+       redirect_to @ad
+     else
+       redirect_to root_path
+     end
   end
 
 end

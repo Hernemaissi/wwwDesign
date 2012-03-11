@@ -2,9 +2,14 @@
   <img src="<%=@ad.image_url%>" alt="Ad" /><br />
   Price: <%=@ad.price%><br />
   Description: <%=@ad.description%><br />
+  <div id="available">
   <% if @ad.available %>
     Currently Available<br />
   <% else %>
     Currently Taken<br />
   <% end %>
+  </div>
   Posted by: <%=@ad.user.name%>
+  <% if current_user?(@ad.user) %>
+    <%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
+  <% end %>

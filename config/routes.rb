@@ -9,6 +9,7 @@ WwwDesign::Application.routes.draw do
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/ads/toggle/:id' => 'ads#toggle_available', :as => :toggle
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
