@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310161607) do
+ActiveRecord::Schema.define(:version => 20120316095927) do
 
   create_table "ads", :force => true do |t|
     t.string   "description"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20120310161607) do
   end
 
   add_index "ads", ["user_id", "created_at"], :name => "index_ads_on_user_id_and_created_at"
+
+  create_table "requests", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "ad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "requests", ["ad_id"], :name => "index_requests_on_ad_id"
+  add_index "requests", ["sender_id", "ad_id"], :name => "index_requests_on_sender_id_and_ad_id", :unique => true
+  add_index "requests", ["sender_id"], :name => "index_requests_on_sender_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

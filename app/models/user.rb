@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_secure_password
   
   has_many :ads, :dependent => :destroy
+  has_many :requests, :foreign_key => "sender_id",
+                      :dependent => :destroy
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   
@@ -30,6 +32,18 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+  
+  def requested?(ad_id)
+    self.requests.find_by_ad_id(ad_id)
+  end
+  
+  def request!(ad)
+    self.requests.create!(:ad_id => ad.id)
+  end
+  
+  def remove_request(ad_id)
+    self.requests.find_by_ad_id(ad_id).destroy
   end
 end
 

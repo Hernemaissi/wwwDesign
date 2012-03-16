@@ -2,6 +2,7 @@ class Ad < ActiveRecord::Base
   attr_accessible :description, :image_url, :price, :available
   
   belongs_to :user
+  has_many :requests, :dependent => :destroy
   default_scope :order => 'ads.created_at DESC'
   
   validates :description, :presence => true, :length => { :maximum => 300 }
@@ -18,7 +19,7 @@ end
 #  description :string(255)
 #  image_url   :string(255)
 #  price       :string(255)
-#  available   :boolean
+#  available   :boolean         default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime
 #  user_id     :integer

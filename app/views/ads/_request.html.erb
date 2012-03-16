@@ -1,0 +1,5 @@
+<%= form_for current_user.requests.
+                          build(:ad_id => @ad.id) do |f| %>
+  <div><%= f.hidden_field :ad_id %></div>
+  <div class="actions"><%= f.submit "Request" %></div>
+<% end %>

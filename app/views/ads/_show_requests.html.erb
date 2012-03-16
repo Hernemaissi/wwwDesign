@@ -1,0 +1,6 @@
+<ul>
+  <% @ad.requests.each do |r| %>
+    <l1>
+      <%= link_to r.sender.name, r.sender %> is interested in the product. Contact email: <%= r.sender.email %> <br />
+    </li>
+  <% end %>

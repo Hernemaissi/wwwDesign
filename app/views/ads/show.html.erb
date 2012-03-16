@@ -11,5 +11,8 @@
   </div>
   Posted by: <%=@ad.user.name%>
   <% if current_user?(@ad.user) %>
-    <%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
+    <br /><%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
   <% end %>
+  <br />
+  <%= render 'request_form' if signed_in? %>
+  <%= render 'show_requests' if current_user?(@ad.user) %>

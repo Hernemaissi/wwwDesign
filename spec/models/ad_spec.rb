@@ -12,7 +12,7 @@ end
 #  description :string(255)
 #  image_url   :string(255)
 #  price       :string(255)
-#  available   :boolean
+#  available   :boolean         default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime
 #  user_id     :integer

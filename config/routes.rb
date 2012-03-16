@@ -1,10 +1,15 @@
 WwwDesign::Application.routes.draw do
 
+  get "requests/create"
+
+  get "requests/destroy"
+
   root :to => 'pages#home'
   
   resources :users
   resources :ads
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :requests, :only => [:create, :destroy]
   
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
