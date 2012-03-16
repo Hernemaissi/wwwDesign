@@ -45,6 +45,19 @@ class User < ActiveRecord::Base
   def remove_request(ad_id)
     self.requests.find_by_ad_id(ad_id).destroy
   end
+  
+  def notifications?
+    self.notifications > 0
+  end
+  
+  def reset_notifications
+    self.update_attribute(:notifications, 0)
+  end
+  
+  def add_notification
+    self.update_attribute(:notifications, self.notifications+1)
+  end
+  
 end
 
 # == Schema Information
@@ -59,5 +72,6 @@ end
 #  password_digest :string(255)
 #  salt            :string(255)
 #  admin           :boolean         default(FALSE)
+#  notifications   :integer         default(0)
 #
 

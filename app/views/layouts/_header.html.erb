@@ -6,7 +6,11 @@
       <li><%= link_to "Ads", ads_path %></li>
       <% if signed_in? %>
       <li><%= link_to "Users", users_path %></li>
+      <% if current_user.notifications? %>
+      <li><%= link_to "Profile(#{current_user.notifications})", current_user %></li>
+      <% else %>
       <li><%= link_to "Profile", current_user %></li>
+      <% end %>
       <li><%= link_to "Settings", edit_user_path(current_user) %></li>
       <% end %>
       <li><%= link_to "Help", help_path %></li>

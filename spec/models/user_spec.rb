@@ -16,5 +16,6 @@ end
 #  password_digest :string(255)
 #  salt            :string(255)
 #  admin           :boolean         default(FALSE)
+#  notifications   :integer         default(0)
 #
 

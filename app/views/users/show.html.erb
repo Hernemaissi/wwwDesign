@@ -16,8 +16,10 @@
       <strong>Name</strong> <%= @user.name %><br />
       <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
       <% if current_user?(@user) %>
-        <%= link_to "Post new ad", new_ad_path  %>
+        <%= link_to "Post new ad", new_ad_path  %><br />
+        <strong>Notifications</strong> <%= @user.notifications %><br />
       <% end %>
+      
     </td>
   </tr>
 </table>
