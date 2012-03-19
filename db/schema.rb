@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120319152952) do
+=======
+ActiveRecord::Schema.define(:version => 20120319174609) do
+>>>>>>> master
 
   create_table "ads", :force => true do |t|
     t.string   "description"
@@ -21,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120319152952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "title"
   end
 
   add_index "ads", ["user_id", "created_at"], :name => "index_ads_on_user_id_and_created_at"

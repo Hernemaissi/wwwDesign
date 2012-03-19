@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
+    if current_user?(@user)
+      @user.reset_notifications
+    end
   end
   
   def new
