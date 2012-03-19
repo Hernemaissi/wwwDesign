@@ -1,5 +1,7 @@
 <%= form_for current_user.requests.
                           build(:ad_id => @ad.id) do |f| %>
   <div><%= f.hidden_field :ad_id %></div>
+  <div> Start date: <%= date_select :request, :start_date %></div>
+  <div> End date: <%= date_select :request, :end_date %></div>
   <div class="actions"><%= f.submit "Request" %></div>
 <% end %>

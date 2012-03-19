@@ -38,8 +38,8 @@ class User < ActiveRecord::Base
     self.requests.find_by_ad_id(ad_id)
   end
   
-  def request!(ad)
-    self.requests.create!(:ad_id => ad.id)
+  def request!(hash)
+    self.requests.create!(hash)
   end
   
   def remove_request(ad_id)
