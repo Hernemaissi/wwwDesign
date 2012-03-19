@@ -18,5 +18,7 @@ end
 #  ad_id      :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  start_date :date
+#  end_date   :date
 #
 

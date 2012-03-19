@@ -17,7 +17,8 @@ class AdsController < ApplicationController
       flash[:success] = "New ad posted"
       redirect_to @ad
     else
-      render 'pages/home'
+      @title = "Post new ad"
+      render 'new'
     end
   end
 

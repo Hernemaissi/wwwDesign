@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120316200357) do
+ActiveRecord::Schema.define(:version => 20120319174609) do
 
   create_table "ads", :force => true do |t|
     t.string   "description"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120316200357) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "title"
   end
 
   add_index "ads", ["user_id", "created_at"], :name => "index_ads_on_user_id_and_created_at"
@@ -30,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20120316200357) do
     t.integer  "ad_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   add_index "requests", ["ad_id"], :name => "index_requests_on_ad_id"

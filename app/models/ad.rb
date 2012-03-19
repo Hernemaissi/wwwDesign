@@ -1,5 +1,5 @@
 class Ad < ActiveRecord::Base
-  attr_accessible :description, :image_url, :price, :available
+  attr_accessible :description, :image_url, :price, :available, :title
   
   belongs_to :user
   has_many :requests, :dependent => :destroy
@@ -9,6 +9,7 @@ class Ad < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :image_url, :presence => true
   validates :price, :presence => true
+  validates :title, :presence => true
 end
 
 # == Schema Information
@@ -23,5 +24,6 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  user_id     :integer
+#  title       :string(255)
 #
 
