@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
 
   def create
     @ad = Ad.find(params[:request][:ad_id])
-    current_user.request!(@ad)
+    current_user.request!(params[:request])
     redirect_to @ad
   end
 

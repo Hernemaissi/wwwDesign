@@ -1,11 +1,12 @@
 class Request < ActiveRecord::Base
-  attr_accessible :ad_id
+  attr_accessible :ad_id, :start_date, :end_date
   
   belongs_to :ad
   belongs_to :sender, :class_name => "User"
   
   validates :sender_id, :presence => true
   validates :ad_id, :presence => true
+  
  
 end
 
@@ -18,5 +19,7 @@ end
 #  ad_id      :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  start_date :date
+#  end_date   :date
 #
 
