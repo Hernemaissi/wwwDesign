@@ -1,0 +1,9 @@
+<%= @request.sender.name %> is interested in your ad <%= @request.ad.title %>
+
+Details:
+Name: <%= @request.sender.name %>
+Email: <%= @request.sender.email %>
+Start Date: <% if @request.start_date %> <%= @request.start_date.strftime("%d/%m/%Y") %><% else %> No time speficied.<% end %>
+End Date: <% if @request.end_date %> <%= @request.end_date.strftime("%d/%m/%Y") %><% else %> No time speficied.<% end %>
+
+Follow the link: <%= ad_url(@request.ad) %>

@@ -3,7 +3,8 @@ class RequestsController < ApplicationController
 
   def create
     @ad = Ad.find(params[:request][:ad_id])
-    current_user.request!(params[:request])
+    r = current_user.request!(params[:request])
+    AppMailer.notify_request_mail(r).deliver
     @ad.user.add_notification
     redirect_to @ad
   end
