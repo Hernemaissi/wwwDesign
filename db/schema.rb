@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(:version => 20120319174609) do
     t.integer  "ad_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "start_date"
-    t.date     "end_date"
   end
 
   add_index "requests", ["ad_id"], :name => "index_requests_on_ad_id"
