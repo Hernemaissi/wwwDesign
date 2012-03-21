@@ -8,14 +8,16 @@ end
 #
 # Table name: users
 #
-#  id              :integer         not null, primary key
-#  name            :string(255)
-#  email           :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  password_digest :string(255)
-#  salt            :string(255)
-#  admin           :boolean         default(FALSE)
-#  notifications   :integer         default(0)
+#  id                     :integer         not null, primary key
+#  name                   :string(255)
+#  email                  :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  password_digest        :string(255)
+#  salt                   :string(255)
+#  admin                  :boolean         default(FALSE)
+#  notifications          :integer         default(0)
+#  password_reset_token   :string(255)
+#  password_reset_sent_at :datetime
 #
 

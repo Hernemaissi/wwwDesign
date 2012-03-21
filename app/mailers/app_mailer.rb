@@ -4,4 +4,9 @@ class AppMailer < ActionMailer::Base
     @request = request
     mail(:to => "#{request.ad.user.name} <#{request.ad.user.email}>", :subject => "New Request")
   end
+  
+  def password_reset(user)
+    @user = user
+    mail(:to => user.email, :subject => "Password reset")
+  end
 end
