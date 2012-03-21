@@ -1,0 +1,27 @@
+<ul>
+<% Category.roots.each do |category_roots| %>
+  
+  <li> <%= category_roots.name %></li>
+  
+  <% unless category_roots.children.empty? %>
+	  <ul>
+	  <% category_roots.children.each do |category_child| %>
+	    
+	    <li> <%= category_child.name %></li>
+	  
+	  	<% unless category_child.children.empty? %>
+	  	<ul>
+	  	<% category_child.children.each do |category_subchild| %>
+	    
+	    	<li> <%= category_subchild.name %></li>
+	  
+	  	<% end %>
+	  </ul>
+  <% end %>
+	  
+	  <% end %>
+	  </ul>
+  <% end %>
+  
+<% end %>
+</ul>
