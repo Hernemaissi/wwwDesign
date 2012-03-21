@@ -33,6 +33,11 @@ end
 
 gem 'jquery-rails'
 
+#https://github.com/stefankroes/ancestry
+#gem 'ancestry'
+
+gem 'acts_as_tree_rails3', '~> 0.1.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

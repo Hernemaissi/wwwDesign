@@ -2,6 +2,23 @@
   <img src="<%=@ad.image_url%>" alt="Ad" /><br />
   Title: <%=@ad.title%><br />
   Price: <%=@ad.price%><br />
+  
+  <% if @ad.size %>
+  	Color: <%=@ad.size%><br />
+  <% end %>
+  
+  <% if @ad.color %>
+  	Color: <%=@ad.color%><br />
+  <% end %>
+  
+  <% if @ad.material %>
+  	Color: <%=@ad.material%><br />
+  <% end %>
+  
+  <% if @ad.condition %>
+  	Color: <%=@ad.condition%><br />
+  <% end %>
+  
   Description: <%=@ad.description%><br />
   <div id="available">
   <% if @ad.available %>

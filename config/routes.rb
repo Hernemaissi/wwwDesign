@@ -7,9 +7,12 @@ WwwDesign::Application.routes.draw do
   root :to => 'pages#home'
   
   resources :users
-  resources :ads
+  resources :ads do
+    resources :categories
+  end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :requests, :only => [:create, :destroy]
+  resources :categories
   
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'

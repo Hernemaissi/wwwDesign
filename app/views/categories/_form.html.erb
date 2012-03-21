@@ -1,0 +1,14 @@
+<%= form_for @category do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :parent_id %><br />
+    <%= f.collection_select :parent_id, Category.all(:order => "name"), :id, :name, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Post ad" %>
+  </div>
+<% end %>
