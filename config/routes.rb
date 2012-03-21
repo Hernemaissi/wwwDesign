@@ -13,6 +13,8 @@ WwwDesign::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :requests, :only => [:create, :destroy]
   resources :categories
+  resources :password_resets
+
   
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'

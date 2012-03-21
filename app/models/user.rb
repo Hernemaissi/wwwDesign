@@ -13,16 +13,23 @@ class User < ActiveRecord::Base
   
   
   validates_presence_of :password, :on => :create
-  validates :password, :presence     => true,
-                       :confirmation => true,
-                       :length       => { :within => 6..40 }
+  validates :password, :confirmation => true,
+                       :length       => { :within => 6..40 },
+                       :on => :create
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
   validates :email, :presence => true,
                     :format   => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
                     
-                    
+  
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    AppMailer.password_reset(self).deliver
+  end
+  
   def self.authenticate_user(email, submitted_password)
     user = find_by_email(email)
     return nil if user.nil?
@@ -58,20 +65,28 @@ class User < ActiveRecord::Base
     self.update_attribute(:notifications, self.notifications+1)
   end
   
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
+  
 end
 
 # == Schema Information
 #
 # Table name: users
 #
-#  id              :integer         not null, primary key
-#  name            :string(255)
-#  email           :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  password_digest :string(255)
-#  salt            :string(255)
-#  admin           :boolean         default(FALSE)
-#  notifications   :integer         default(0)
+#  id                     :integer         not null, primary key
+#  name                   :string(255)
+#  email                  :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  password_digest        :string(255)
+#  salt                   :string(255)
+#  admin                  :boolean         default(FALSE)
+#  notifications          :integer         default(0)
+#  password_reset_token   :string(255)
+#  password_reset_sent_at :datetime
 #
 
