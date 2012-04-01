@@ -1,17 +1,21 @@
 class Ad < ActiveRecord::Base
-  attr_accessible :description, :image_url, :price, :available, :title, :color, :material, :size, :condition
+  attr_accessible :description, :image_url, :price, :available, :title, :color, :material, :size, :condition, :category_id, :part_ids
   
   belongs_to :user
   has_many :requests, :dependent => :destroy
+  belongs_to :category
+  has_and_belongs_to_many :parts
   default_scope :order => 'ads.created_at DESC'
   
-  validates :description, :presence => true, :length => { :maximum => 300 }
+  validates :description, :length => { :maximum => 300 }
   validates :user_id, :presence => true
+  validates :category_id, :presence => true
   validates :image_url, :presence => true
   validates :price, :presence => true
   validates :title, :presence => true
   validates :condition, :presence => true
   validates :size, :presence => true
+  
 end
 
 # == Schema Information

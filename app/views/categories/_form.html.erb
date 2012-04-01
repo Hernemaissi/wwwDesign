@@ -6,9 +6,12 @@
   </div>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
   </div>
+  <div class="field">
+  	<%= f.select :part_ids, Part.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
+	</div>
   <div class="actions">
-    <%= f.submit "Post ad" %>
+    <%= f.submit "Save Category" %>
   </div>
 <% end %>

@@ -3,23 +3,34 @@
   Title: <%=@ad.title%><br />
   Price: <%=@ad.price%><br />
   
-  <% if @ad.size %>
-  	Color: <%=@ad.size%><br />
+  <% if @ad.size? %>
+  	Size: <%=@ad.size%><br />
   <% end %>
   
-  <% if @ad.color %>
+  <% if @ad.color? %>
   	Color: <%=@ad.color%><br />
   <% end %>
   
-  <% if @ad.material %>
-  	Color: <%=@ad.material%><br />
+  <% if @ad.material? %>
+  	Material: <%=@ad.material%><br />
   <% end %>
   
-  <% if @ad.condition %>
-  	Color: <%=@ad.condition%><br />
+  <% if @ad.condition? %>
+  	Condition: <%=@ad.condition%><br />
   <% end %>
+  
+  <% if @ad.category_id? %>
+  Category: <%=@ad.category.name %><br />
+  <% end %>
+  
+
+  Parts: <br />
+  <% @ad.parts.each do |part| %>
+    <%= part.name %><br />
+	<% end %>
   
   Description: <%=@ad.description%><br />
+  
   <div id="available">
   <% if @ad.available %>
     Currently Available<br />

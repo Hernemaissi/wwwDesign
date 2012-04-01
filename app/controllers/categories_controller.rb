@@ -45,4 +45,23 @@ class CategoriesController < ApplicationController
     @category = Category.new
     @title = "Post new category"
   end
+  
+  
+  def filter_categories
+    @categories = Category.subtree_of(params[:id]).arrange
+
+    respond_to do |format|
+      format.json { render :json =>  Category.json_tree(@categories)}
+    end
+  end
+  
+  def get_parts
+    @category = Category.find(params[:id])
+    @parts = @category.parts
+
+    respond_to do |format|
+      format.json { render :json =>  @parts}
+    end
+  end
+  
 end

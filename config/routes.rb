@@ -20,6 +20,9 @@ WwwDesign::Application.routes.draw do
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/ads/toggle/:id' => 'ads#toggle_available', :as => :toggle
+  match '/categories/filter_categories/:id', :controller=>'categories', :action => 'filter_categories'
+  match '/categories/get_parts/:id', :controller=>'categories', :action => 'get_parts'
+
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -27,7 +30,8 @@ WwwDesign::Application.routes.draw do
   get "pages/home"
   get "pages/about"
   get "pages/contact"
-
+  
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

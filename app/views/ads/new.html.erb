@@ -34,7 +34,31 @@
     <%= f.label :condition %><br />
     <%= f.text_field :condition %>
   </div>
+  <div class="field" style="display: hidden">
+  	<%= f.label :category_id %><br />
+  	<div style="display: hidden">
+  		<%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => true} %>
+		</div>
+		<div id="filteredCategories">
+			<select id="category_root" name="root_category">
+				<option value="">Valitse Kategoria</option>
+				<%= options_from_collection_for_select(Category.roots(:order => "name"), :id, :name, {:include_blank => true}) %>
+	  	</select>
+	  	<select id="category_children1" name="category_children1" style="display: none">>
+	  	</select>
+  		<select id="category_children2" name="category_children2" style="display: none">>
+	  	</select>
+  	</div>
+  	
+  	<div id="parts">
+  	</div>
+	</div>	
+ 
+  </div>
   <div class="actions">
     <%= f.submit "Post ad" %>
   </div>
+  
+
+
 <% end %>

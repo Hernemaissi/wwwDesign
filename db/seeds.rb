@@ -12,15 +12,28 @@
   naiset    = Category.create("name" => "Naiset")
   miehet    = Category.create("name" => "Miehet")
   
-  miehet1 = miehet.children.create("name" => "Smokki")
-  miehet2 = miehet.children.create("name" => "Tummapuku")
-  miehet3 = miehet.children.create("name" => "Frakki")
-  miehet4 = miehet.children.create("name" => "Kengät")
-  miehetkengät1 = miehet4.children.create("name" => "Lakerikengät")
-  miehetkengät2 = miehet4.children.create("name" => "Nahkakengät")
+  smokki = miehet.children.create("name" => "Smokki")
+  tummapuku = miehet.children.create("name" => "Tumma puku")
+  frakki = miehet.children.create("name" => "Frakki")
+  saketti = miehet.children.create("name" => "Saketti")
+  kengät = miehet.children.create("name" => "Kengät")
+  miehetkengät1 = kengät.children.create("name" => "Lakerikengät")
+  miehetkengät2 = kengät.children.create("name" => "Nahkakengät")
   
 
   naiset1 = naiset.children.create("name" => "Iltapuku")
   naiset2 = naiset.children.create("name" => "Hääpuku")
-  naiset3 = naiset.children.create("name" => "Juhlamekot")
+  naiset3 = naiset.children.create("name" => "Juhlamekko")
   naiset4 = naiset.children.create("name" => "Kengät")
+  
+  parts = Part.create([
+    { name: 'Takki', categories: [smokki, tummapuku, frakki, saketti]}, 
+    { name: 'Housut', categories: [smokki, tummapuku, frakki, saketti] }, 
+    { name: 'Liivi', categories: [smokki, tummapuku, frakki, saketti]}, 
+    { name: 'Paita', categories: [smokki, tummapuku, frakki, saketti]}, 
+    { name: 'Solmio', categories: [smokki, tummapuku, saketti]}, 
+    { name: 'Kalvosinnapit', categories: [smokki, tummapuku, frakki, saketti]}, 
+    { name: 'Plastron', categories: [tummapuku, frakki, saketti]}, 
+    { name: 'Rinnusnapit', categories: [frakki]}, 
+    { name: 'Vyö', categories: [smokki, frakki]}])
+  

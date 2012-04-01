@@ -29,6 +29,7 @@ class AdsController < ApplicationController
   end
 
   def update
+    params[:ad][:part_ids] ||= []
   end
 
   def new
@@ -48,4 +49,8 @@ class AdsController < ApplicationController
      end
   end
 
+  
+
+  
+  
 end

@@ -1,3 +1,8 @@
 
-  Name: <%=@category.name%><br />
-  Price: <%=@category.parent_id%><br /> 
+Name: <%=@category.name%><br />
+Price: <%=@category.parent_id%><br /> 
+  
+  Parts: <br />
+  <% @category.parts.each do |part| %>
+    <%= part.name %><br />
+	<% end %>
