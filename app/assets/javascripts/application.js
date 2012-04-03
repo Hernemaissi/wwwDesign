@@ -81,11 +81,11 @@ function filterCategories(category_id, $category) {
 	else{
 		//set hidden ad_category_id select
 		$("#ad_category_id").val($category.val());
-		filterParts();
+		filterParts(); //hide checkboxes
 	}
 }  
 
-jQuery(function($) {
+$(function() {
 	//miehet/naiset changes
 	$("select#category_root").change(function() {
 		// get subtree and replace selects
@@ -104,5 +104,16 @@ jQuery(function($) {
 		filterCategories(category_id, $("select#category_children2"));
 	});
 	
+	//if editing and value is already selected
+	$("select#category_children1 option").each(function() {
+    	$(this).click(function() {
+    		//set hidden ad_category_id select
+    		$("#ad_category_id").val($(this).val());
+    		filterParts($(this).val());
+        })
+		//var category_id = $("select#category_root :selected").val();
+		//filterCategories($("#ad_category_id").val(), $("select#category_root"));
+		//filterParts($(this).val());
+	});
 
 })

@@ -23,10 +23,11 @@
   Category: <%=@ad.category.name %><br />
   <% end %>
   
-
-  Parts: <br />
-  <% @ad.parts.each do |part| %>
-    <%= part.name %><br />
+	<% if !@ad.parts.empty? %>
+	  Parts: <br />
+	  <% @ad.parts.each do |part| %>
+	    <%= part.name %><br />
+		<% end %>
 	<% end %>
   
   Description: <%=@ad.description%><br />
@@ -40,7 +41,13 @@
   </div>
   Posted by: <%=@ad.user.name%>
   <% if current_user?(@ad.user) %>
-    <br /><%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
+    <div>
+    	<%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
+    </div>
+    	<%= link_to "Edit", edit_ad_path(@ad) %>
+    <div>
+    	
+    </div>
   <% end %>
   <br />
   <%= render 'request_form' if signed_in? %>

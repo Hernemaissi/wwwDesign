@@ -26,11 +26,21 @@ class AdsController < ApplicationController
   end
 
   def edit
+    @ad = Ad.find(params[:id])
   end
 
   def update
+    #part_id checkboxes
     params[:ad][:part_ids] ||= []
-  end
+    
+    @ad = Ad.find(params[:id])
+    if @ad.update_attributes(params[:ad])
+      flash[:notice] = "Successfully updated ad."
+      redirect_to @ad
+    else
+      render :action => 'edit'
+    end
+  end    
 
   def new
     @ad = Ad.new

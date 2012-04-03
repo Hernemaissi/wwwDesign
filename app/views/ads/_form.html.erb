@@ -1,0 +1,100 @@
+<%= form_for @ad do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br />
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br />
+    <%= f.text_field :condition %>
+  </div>
+  <div class="field">
+  	<%= f.label :category_id %><br />
+  	<div style="display: none">
+  		<%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => true} %>
+		</div>
+		<div id="filteredCategories">
+	  <% if @ad.category_id? %>  <!-- If editing and category and parts selected-->
+	  	
+		  	<% if @ad.category.depth == 1 %> 
+		  		<select id="category_root" name="root_category">
+						<option value="">Valitse Kategoria</option>
+						<%= options_from_collection_for_select(Category.roots(:order => "name"), :id, :name, :selected => @ad.category.parent_id ) %>
+			  	</select>
+			  	
+		  		<select id="category_children1" name="category_children1">>
+				  	<%= options_from_collection_for_select(Category.siblings_of(@ad.category_id), :id, :name, :selected => @ad.category_id ) %>
+			  	</select>
+			  <% elsif @ad.category.depth == 2 %>
+			  	
+			  	<select id="category_root" name="root_category">
+						<option value="">Valitse KategoriaAAA</option>
+						<%= options_from_collection_for_select(Category.roots(:order => "name"), :id, :name, :selected => @ad.category.parent_id.parent_id ) %>
+			  	</select>
+			  	
+		  		<select id="category_children1" name="category_children1">
+				  	<%= options_from_collection_for_select(Category.siblings_of(@ad.category_id), :id, :name, :selected => @ad.parent_id ) %>
+			  	</select>
+			  	
+			  	<select id="category_children2" name="category_children2" style="display: none">
+			  		<%= options_from_collection_for_select(Category.siblings_of(@ad.category_id), :id, :name, :selected => @ad.category_id ) %>	
+			  	</select>
+		  	<% end %>
+	  	
+	  	<% else %> <!-- create new ad -->
+		  	<select id="category_root" name="root_category">
+					<option value="">Valitse Kategoria</option>
+					<%= options_from_collection_for_select(Category.roots(:order => "name"), :id, :name) %>
+		  	</select>
+	  	
+	  		<select id="category_children1" name="category_children1" style="display: none"></select>
+		  	
+		  	<select id="category_children2" name="category_children2" style="display: none"></select>
+	  	<% end %>
+	  	
+  		
+  	<div id="parts">
+<% if @ad.category_id? %>  		
+	<% for part in @ad.category.parts %>
+	
+	  <%= check_box_tag "ad[part_ids][]", part.id, @ad.parts.include?(part) %>
+	  <%= part.name %>
+	
+	<% end %>
+<% end %>
+
+  </div>
+	</div>	
+ 
+  </div>
+  <div class="actions">
+    <%= f.submit "Post ad" %>
+  </div>
+  
+
+
+<% end %>
