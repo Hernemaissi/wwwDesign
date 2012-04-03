@@ -111,9 +111,7 @@ $(function() {
     		$("#ad_category_id").val($(this).val());
     		filterParts($(this).val());
         })
-		//var category_id = $("select#category_root :selected").val();
-		//filterCategories($("#ad_category_id").val(), $("select#category_root"));
-		//filterParts($(this).val());
+        //TODO kun ollaan edit näkymässä niin kengät ei toimi
 	});
 
 })
