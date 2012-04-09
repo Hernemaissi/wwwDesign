@@ -1,0 +1,48 @@
+body {
+  background-image:url('wp_white.gif');
+}
+
+
+.trans_bg {
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(255, 255, 255);
+	/* RGBa with 0.6 opacity */
+	background: rgba(255, 255, 255, 0.5);
+}
+
+#gender_tab li {
+	background: #141414;
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(248,248,248);
+	/* RGBa with 0.6 opacity */
+	background: rgba(248,248,248, 0.5);
+	color: 	#303030;
+}
+
+#gender_tab .selected {
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(255, 255, 255);
+	/* RGBa with 0.6 opacity */
+	background: rgba(255, 255, 255, 0.5);
+	color: black;
+}
+
+/* Links */
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+}
+
+nav ul li a:visited {
+  color: black;
+}
