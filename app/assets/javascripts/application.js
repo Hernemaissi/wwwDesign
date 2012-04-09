@@ -81,7 +81,7 @@ function filterCategories(category_id, $category) {
 	else{
 		//set hidden ad_category_id select
 		$("#ad_category_id").val($category.val());
-		filterParts();
+		filterParts(); //hide checkboxes
 	}
 }  
 
@@ -97,7 +97,7 @@ $(function() {
 		}
 	});
 	
-	
+
 	//miehet/naiset changes
 	$("select#category_root").change(function() {
 		// get subtree and replace selects
@@ -116,5 +116,14 @@ $(function() {
 		filterCategories(category_id, $("select#category_children2"));
 	});
 	
+	//if editing and value is already selected
+	$("select#category_children1 option").each(function() {
+    	$(this).click(function() {
+    		//set hidden ad_category_id select
+    		$("#ad_category_id").val($(this).val());
+    		filterParts($(this).val());
+        })
+        //TODO kun ollaan edit näkymässä niin kengät ei toimi
+	});
 
 })
