@@ -7,6 +7,9 @@ class CategoriesController < ApplicationController
   def show
     @title = "Temp title"
     @category = Category.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create

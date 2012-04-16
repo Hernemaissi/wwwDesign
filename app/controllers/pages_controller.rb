@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
-    @ads = Ad.all
+    @categories = Category.all
     @category = Category
   end
 

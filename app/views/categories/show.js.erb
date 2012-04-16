@@ -1,0 +1,3 @@
+$("#ads").empty();
+
+$("#ads").html("<%= escape_javascript(render :partial => 'categoryads', :locals => {:c => @category}) %>");

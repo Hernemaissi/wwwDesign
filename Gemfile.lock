@@ -142,7 +142,7 @@ DEPENDENCIES
   annotate!
   bcrypt-ruby
   coffee-rails (~> 3.1.1)
-  jquery-rails
+  jquery-rails (>= 1.0.12)
   rails (= 3.1.1)
   rspec-rails (= 2.6.1)
   sass-rails (~> 3.1.4)
