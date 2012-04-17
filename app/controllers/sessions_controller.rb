@@ -20,4 +20,13 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_path
   end
+
+  def change_gender
+    cookies.permanent.signed[:gender] = params[:gender]
+    @categories = Category.find_by_name(params[:gender]).children
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
+  end
 end

@@ -40,5 +40,10 @@ end
 #  updated_at  :datetime
 #  user_id     :integer
 #  title       :string(255)
+#  color       :string(255)
+#  condition   :string(255)
+#  size        :string(255)
+#  material    :string(255)
+#  category_id :integer
 #
 

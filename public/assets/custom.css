@@ -1,17 +1,12 @@
+
 .container {
   width: 710px;
 }
 
-body {
-  background: #cff;
-}
-
 header {
-  padding-top: 20px;
 }
 
 header img {
-  padding: 1em;
   background: #fff;
 }
 
@@ -19,36 +14,34 @@ section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #fff;
 }
 
 section h1 {
   font-size: 200%;
 }
 
-/* Links */
-
-a {
-  color: #09c;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #069;
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #069;
-}
 /* Navigation */
 
-nav {
-  float: right;
+#gender_tab {
+	list-style: none outside none;
+	overflow: hidden;
+	margin: 0;
 }
 
+#gender_tab li {
+	float: left;
+	margin: 0 3px 0 0;
+	padding: 0 60px 0 25px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+
 nav {
-  background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -69,9 +62,6 @@ nav ul li a {
   font-weight: bold;
 }
 
-nav ul li a:visited {
-  color: #09c;
-}
 
 nav ul li a:hover {
   text-decoration: underline;
@@ -95,9 +85,9 @@ a.signup_button {
 /* Round corners */
 
 .round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
+  -moz-border-radius:    2px;
+  -webkit-border-radius: 2x;
+  border-radius:         2px;
 }
 
 footer {

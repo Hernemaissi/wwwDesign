@@ -6,18 +6,33 @@
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag :common %>
+    
+    <%= stylesheet_link_tag "gender_male", :id => "switch_style" %>
+    
+    <!--fix this -->
+    <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/cupertino/jquery-ui.css" %>
   </head>
   <body>
     <div class="container">
+    	<%= link_to logo, root_path %>
+    	
+      <ul id="gender_tab">
+		    <li id="gender_male" class="trans_bg selected" ><%= link_to "Miehet", "/gender/Miehet", :remote => true %></li> 
+		    <li id="gender_female" class="trans_bg"><%= link_to "Naiset", "/gender/Naiset", :remote => true %></li> 
+		  </ul> 
+      
       <%= render 'layouts/header' %>
-      <section class="round">
+      
+      <section class="round trans_bg">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
       </section>
+      
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
+	     
     </div>
   </body>
 </html>

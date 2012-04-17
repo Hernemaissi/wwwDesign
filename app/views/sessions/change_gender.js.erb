@@ -1,0 +1,4 @@
+$("#ads").empty();
+<% @categories.each do |c| %>
+$("#ads").append("<%= escape_javascript(render :partial => 'categories/categoryads', :locals => {:c => c}) %>");
+<% end %>

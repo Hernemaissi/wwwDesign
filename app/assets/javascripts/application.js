@@ -86,6 +86,18 @@ function filterCategories(category_id, $category) {
 }  
 
 $(function() {
+
+	$("#gender_tab li").click(function(){
+		if(!$(this).hasClass("selected")){
+			var id = $(this).attr("id");
+			$("#switch_style").attr("href", "assets/" + id + ".css");
+			$("#gender_tab li").each(function(){
+				$(this).toggleClass('selected');
+			});
+		}
+	});
+	
+
 	//miehet/naiset changes
 	$("select#category_root").change(function() {
 		// get subtree and replace selects
