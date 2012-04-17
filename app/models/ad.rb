@@ -16,6 +16,15 @@ class Ad < ActiveRecord::Base
   validates :condition, :presence => true
   validates :size, :presence => true
   
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+
 end
 
 # == Schema Information

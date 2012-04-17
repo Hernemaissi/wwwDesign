@@ -3,8 +3,9 @@ class AdsController < ApplicationController
 
   def index
     @title = "All ads"
-    @ads = Ad.all
+    @ads = Ad.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
   end
+  
   
   def show
     @title = "Temp title"
