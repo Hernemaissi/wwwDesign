@@ -17,8 +17,8 @@
     	<%= link_to logo, root_path %>
     	
       <ul id="gender_tab">
-		    <li id="gender_male" class="trans_bg selected" >Miehet</li> 
-		    <li id="gender_female" class="trans_bg">Naiset</li> 
+		    <li id="gender_male" class="trans_bg selected" ><%= link_to "Miehet", "/gender/Miehet", :remote => true %></li> 
+		    <li id="gender_female" class="trans_bg"><%= link_to "Naiset", "/gender/Naiset", :remote => true %></li> 
 		  </ul> 
       
       <%= render 'layouts/header' %>
