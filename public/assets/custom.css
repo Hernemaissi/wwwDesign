@@ -86,7 +86,7 @@ a.signup_button {
 
 .round {
   -moz-border-radius:    2px;
-  -webkit-border-radius: 2x;
+  -webkit-border-radius: 2px;
   border-radius:         2px;
 }
 
@@ -116,7 +116,6 @@ td.sidebar {
   width: 30%;
   padding: 1em;
   vertical-align: top;
-  background: #ffc;
 }
 
 .profile img.gravatar {
@@ -176,4 +175,11 @@ ul.users {
 .users li {
   list-style: none;
   list-style: none;
+}
+
+
+/* search page */
+
+#searchfilter .selected {
+	color: red;
 }

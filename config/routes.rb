@@ -23,11 +23,15 @@ WwwDesign::Application.routes.draw do
   match '/categories/filter_categories/:id', :controller=>'categories', :action => 'filter_categories'
   match '/categories/get_parts/:id', :controller=>'categories', :action => 'get_parts'
   match '/gender/:gender', :to => 'sessions#change_gender'
-
-
+  
+  match '/search/', :to => 'search#index'
+  match '/search/category/:id' => 'search#filter_category', :as => :filterc
+  match '/search/category/:c_id/:p_id' => 'search#filter_parts', :as => :filterp
+  
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  get "pages/search"
   get "pages/home"
   get "pages/about"
   get "pages/contact"

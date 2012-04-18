@@ -7,7 +7,12 @@
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag :common %>
     
-    <%= stylesheet_link_tag "gender_male", :id => "switch_style" %>
+
+    <% if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset" %> 
+    	<%= stylesheet_link_tag "gender_female", :id => "switch_style" %>
+    <% else %>
+    	<%= stylesheet_link_tag "gender_male", :id => "switch_style" %>
+    <% end %>
     
     <!--fix this -->
     <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/cupertino/jquery-ui.css" %>
@@ -17,8 +22,20 @@
     	<%= link_to logo, root_path %>
     	
       <ul id="gender_tab">
-		    <li id="gender_male" class="trans_bg selected" ><%= link_to "Miehet", "/gender/Miehet", :remote => true %></li> 
-		    <li id="gender_female" class="trans_bg"><%= link_to "Naiset", "/gender/Naiset", :remote => true %></li> 
+		    <li id="gender_male" class="trans_bg 
+		    	<% if cookies.signed[:gender] && cookies.signed[:gender] == "Miehet" %> 
+  						selected
+    			<% end %>
+    			">
+    			<%= link_to "Miehet", "/gender/Miehet", :remote => true %>
+    		</li> 
+		    <li id="gender_female" class="trans_bg
+		    	<% if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset" %> 
+  						selected
+    			<% end %>		    	
+			    ">
+			    <%= link_to "Naiset", "/gender/Naiset", :remote => true %>
+		    </li> 
 		  </ul> 
       
       <%= render 'layouts/header' %>

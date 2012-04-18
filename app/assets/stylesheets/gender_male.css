@@ -3,6 +3,9 @@ body {
   color: white;
 }
 
+h1, h2, h3 {
+	color: white;
+}
 .trans_bg {
 	  /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(0, 0, 0);
@@ -42,4 +45,8 @@ a:visited {
 
 nav ul li a:visited {
   color: white;
+}
+
+td.sidebar {
+  background: #222;
 }

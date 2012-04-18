@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @title = "Home"
+    @title = "Etusivu"
     if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset"
       @categories = Category.find_by_name("Naiset").children
     else

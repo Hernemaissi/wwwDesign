@@ -46,3 +46,8 @@ a:visited {
 nav ul li a:visited {
   color: black;
 }
+
+
+td.sidebar {
+  background: #ffc;
+}
