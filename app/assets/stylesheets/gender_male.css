@@ -61,3 +61,12 @@ nav ul li a:visited {
 td.sidebar {
   background: #222;
 }
+
+
+#error_explanation {
+  background-color: #141414;
+}
+
+#error_explanation p {
+  color: white;
+}
