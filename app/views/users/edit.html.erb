@@ -1,4 +1,4 @@
-<h1>Edit user</h1>
+<h1>Omat asetukset</h1>
 
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
@@ -19,6 +19,6 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Päivitä" %>
   </div>
 <% end %>
