@@ -9,7 +9,7 @@
 
 
 
-<%= will_paginate @ads %>
+
 
 <% @ads.each do |ad| %>
   Vuokra: <%=ad.price%>
@@ -18,5 +18,3 @@
   <img class="large" src="<%=ad.image_url %>" title="large image" /></a>
   </div>
 <%end%>
-
-<%= will_paginate @ads %>

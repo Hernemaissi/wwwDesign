@@ -36,7 +36,7 @@ gem 'jquery-rails', '>= 1.0.12'
 #https://github.com/stefankroes/ancestry
 gem 'ancestry'
 
-gem 'will_paginate', '3.0.pre2'
+#gem 'will_paginate', '3.0.pre2'
 
 
 # To use ActiveModel has_secure_password
