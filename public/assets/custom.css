@@ -1,6 +1,6 @@
 
 .container {
-  width: 710px;
+  width: 800px;
 }
 
 header {
@@ -31,7 +31,7 @@ section h1 {
 #gender_tab li {
 	float: left;
 	margin: 0 3px 0 0;
-	padding: 0 60px 0 25px;
+	padding: 5px 60px 5px 25px;
 	-webkit-border-top-left-radius: 4px;
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-radius-topleft: 4px;
@@ -54,12 +54,12 @@ nav ul {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 0.2em 0;
+padding: 0.5em 0;
 }
 
 nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
+  padding: 0.5em 3em;
+    font-weight: bold;
 }
 
 
@@ -79,7 +79,11 @@ a.signup_button {
   background: #006400;
   font-size: 150%;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
+  
+  position:relative;
+  right: -300px;
+  top: 60px;
 }
 
 /* Round corners */

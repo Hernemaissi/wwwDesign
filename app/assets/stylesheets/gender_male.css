@@ -23,9 +23,17 @@ h1, h2, h3 {
 }
 
 #gender_tab .selected {
-	background: #000;
+	background: rgba(0, 0, 0, 0.7);
 	color: white;
 }
+#gender_tab :hover{
+	background: #000000;
+	color: white;
+	text-decoration: underline;
+
+}
+
+
 
 /* Links */
 
@@ -37,6 +45,7 @@ a {
 a:hover {
   color: white;
   text-decoration: underline;
+  background: #000000;
 }
 
 a:visited {
