@@ -1,0 +1,7 @@
+<% if @ad.available %>
+  $("#available").html("Currently Available")
+<% else %>
+  $("#available").html("Currently Taken")
+<% end %>
+
+$("#xhrflash").html("Availability toggled")
