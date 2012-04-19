@@ -16,13 +16,16 @@ class Ad < ActiveRecord::Base
   validates :condition, :presence => true
   validates :size, :presence => true
   
-  def self.search(search)
-    if search
-      where('title LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
-  end
+  
+  #scope :by_category, lambda {|category| {:conditions => {:category_id => category.id}}}
+  scope :available, :conditions => {:available => true}
+  #scope :parts, 
+  
+  
+  #def self.available()
+  #  where("created_at < ?", time)
+  #end
+  
 
 
 end

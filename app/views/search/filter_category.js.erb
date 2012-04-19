@@ -1,8 +1,10 @@
 /* mark selected category with check */ 
+console.log("mark");
 $("#categories").children().each(function(){
 	$(this).removeClass("selected");
 });
-$("#categories #<%= escape_javascript(@selected_category.name) %>").addClass("selected");
+console.log("mark", $("#categories #<%= escape_javascript(@selected_category.id.to_s()) %>"));
+$("#categories #<%= escape_javascript(@selected_category.id.to_s()) %>").addClass("selected");
 
 /* get parts if any*/
 $("#parts").html("<%= escape_javascript(render :partial => 'search/filter_category', :locals => {:parts => @parts}) %>");

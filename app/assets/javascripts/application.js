@@ -77,6 +77,34 @@ function filterCategories(category_id, $category) {
 }  
 
 $(function() {
+	/* search filter */
+	
+	$(function($) {
+	    $("#searchfilter #parts input").live('change', function() {
+	    	var category = $("#categories .selected").attr('id');
+	    	var parts = [];
+	    	$("#searchfilter #parts input:checked").each(function(){
+    			parts.push(this.value);
+    		});
+	    	
+	    	var data = {
+	    		'category': category,
+	    		'parts': parts
+	    	}
+	    	
+	    	console.log(data);
+	        $.ajax({
+	        	url: "/search/filter/",
+	        	data: data,
+	        	dataType: 'html',
+	        	success: function(data){
+	        		console.log("success");
+	        		$("#ads").html(data);
+	        	}
+	        });
+	    });
+	}); 
+	
 	
 	/* change stylesheets when gender tab changes, should be moved to sessions/change_gender */
 	$("#gender_tab li").click(function(){

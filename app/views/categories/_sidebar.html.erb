@@ -5,21 +5,11 @@
   
   <% unless category_roots.children.empty? %>
 	  <ul>
+	  	
 	  <% category_roots.children.each do |category_child| %>
-	    
 	    <li> <%= link_to category_child.name, category_child, :remote => true %></li>
-	  
-	  	<% unless category_child.children.empty? %>
-	  	<ul>
-	  	<% category_child.children.each do |category_subchild| %>
-	    
-	    	<li> <%= link_to category_subchild.name, category_subchild, :remote => true %></li>
-	  
-	  	<% end %>
-	  </ul>
-  <% end %>
-	  
 	  <% end %>
+	  
 	  </ul>
   <% end %>
   
