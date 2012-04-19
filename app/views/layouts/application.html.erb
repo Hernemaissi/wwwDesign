@@ -19,8 +19,9 @@
   </head>
   <body>
     <div class="container">
+    	<a class="signup_button round" href="/signup">Sign up now!</a>
     	<%= link_to logo, root_path %>
-    	
+	
       <ul id="gender_tab">
 		    <li id="gender_male" class="trans_bg 
 		    	<% if cookies.signed[:gender] && cookies.signed[:gender] == "Miehet" %> 

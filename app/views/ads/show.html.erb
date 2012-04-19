@@ -1,45 +1,45 @@
 
   <img src="<%=@ad.image_url%>" alt="Ad" /><br />
-  Title: <%=@ad.title%><br />
-  Price: <%=@ad.price%><br />
+  Nimi: <%=@ad.title%><br />
+  Vuokra: <%=@ad.price%><br />
   
   <% if @ad.size? %>
-  	Size: <%=@ad.size%><br />
+  	Koko: <%=@ad.size%><br />
   <% end %>
   
   <% if @ad.color? %>
-  	Color: <%=@ad.color%><br />
+  	Väri: <%=@ad.color%><br />
   <% end %>
   
   <% if @ad.material? %>
-  	Material: <%=@ad.material%><br />
+  	Materiaali: <%=@ad.material%><br />
   <% end %>
   
   <% if @ad.condition? %>
-  	Condition: <%=@ad.condition%><br />
+  	Kunto: <%=@ad.condition%><br />
   <% end %>
   
   <% if @ad.category_id? %>
-  Category: <%=@ad.category.name %><br />
+  Kategoria: <%=@ad.category.name %><br />
   <% end %>
   
 	<% if !@ad.parts.empty? %>
-	  Parts: <br />
+	  Osat: <br />
 	  <% @ad.parts.each do |part| %>
 	    <%= part.name %><br />
 		<% end %>
 	<% end %>
   
-  Description: <%=@ad.description%><br />
+  Kuvaus: <%=@ad.description%><br />
   
-  <div id="available">
+  Tila:<div id="available">
   <% if @ad.available %>
-    Currently Available<br />
+    Vapaa / Vuokrattavissa<br />
   <% else %>
-    Currently Taken<br />
+    Parhaillaan vuokrassa<br />
   <% end %>
   </div>
-  Posted by: <%=@ad.user.name%>
+  Omistaja: <%=@ad.user.name%>
   <% if current_user?(@ad.user) %>
     <div>
     	<%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
