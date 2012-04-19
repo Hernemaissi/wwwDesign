@@ -54,12 +54,12 @@ nav ul {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-padding: 0.5em 0;
+  padding: 0.5em 0;
 }
 
 nav ul li a {
-  padding: 0.5em 3em;
-    font-weight: bold;
+  padding: 0.5em 1.8em;
+  font-weight: bold;
 }
 
 
