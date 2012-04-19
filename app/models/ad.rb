@@ -16,6 +16,22 @@ class Ad < ActiveRecord::Base
   validates :condition, :presence => true
   validates :size, :presence => true
   
+  
+  #scope :by_category, lambda {|category| {:conditions => {:category_id => category.id}}}
+  #scope :available, :conditions => {:available => true}
+  #scope :parts, 
+  
+  
+  def self.available(value)
+    where(:available => value)
+  end
+  
+  def self.with_part(id)
+    where(:part_id => id)
+  end
+  
+
+
 end
 
 # == Schema Information

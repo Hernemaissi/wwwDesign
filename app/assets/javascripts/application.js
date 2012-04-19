@@ -53,23 +53,14 @@ function filterCategories(category_id, $category) {
 			if(data[0].children.length != 0){
 				$category.empty().show();
 				$.each(data[0].children, function(key, value) {   
-					//no subchildren
-					if(value.children.length === 0){
-						$category.append($("<option>", { value : value.id })
-		    	        	.text(value.name)
-		    	        	.click(function() {
-		    	        		//set hidden ad_category_id select
-		    	        		$("#ad_category_id").val($(this).val());
-		    	        		filterParts(value.id);
-			    	        })
-						);
-					}
-					//subchildren, e.g. kengät
-					else{
-						$category.append($("<option>", { value : value.id })
-			    	        .text(value.name));
-						filterParts(); //hide checkboxes
-					}
+					$category.append($("<option>", { value : value.id })
+	    	        	.text(value.name)
+	    	        	.click(function() {
+	    	        		//set hidden ad_category_id select
+	    	        		$("#ad_category_id").val($(this).val());
+	    	        		filterParts(value.id);
+		    	        })
+					);
 				});
 				
 				//set hidden ad_category_id select to default value
@@ -86,11 +77,40 @@ function filterCategories(category_id, $category) {
 }  
 
 $(function() {
-
+	/* search filter */
+	
+	$(function($) {
+	    $("#searchfilter #parts input").live('change', function() {
+	    	var category = $("#categories .selected").attr('id');
+	    	var parts = [];
+	    	$("#searchfilter #parts input:checked").each(function(){
+    			parts.push(this.value);
+    		});
+	    	
+	    	var data = {
+	    		'category': category,
+	    		'parts': parts
+	    	}
+	    	
+	    	console.log(data);
+	        $.ajax({
+	        	url: "/search/filter/",
+	        	data: data,
+	        	dataType: 'html',
+	        	success: function(data){
+	        		console.log("success");
+	        		$("#ads").html(data);
+	        	}
+	        });
+	    });
+	}); 
+	
+	
+	/* change stylesheets when gender tab changes, should be moved to sessions/change_gender */
 	$("#gender_tab li").click(function(){
 		if(!$(this).hasClass("selected")){
 			var id = $(this).attr("id");
-			$("#switch_style").attr("href", "assets/" + id + ".css");
+			$("#switch_style").attr("href", "/assets/" + id + ".css");
 			$("#gender_tab li").each(function(){
 				$(this).toggleClass('selected');
 			});
@@ -102,18 +122,14 @@ $(function() {
 	$("select#category_root").change(function() {
 		// get subtree and replace selects
 		var category_id = $("select#category_root :selected").val();
-	    $("select#category_children2").empty().hide();
 	    $("select#category_children1").empty().hide();
-		filterCategories(category_id, $("select#category_children1"));
-		
-		
+		filterCategories(category_id, $("select#category_children1"))
 	});
 	
 	//children of miehet/naiset changes
 	$("select#category_children1").change(function() {
 	    // get subtree and replace selects
 		var category_id = $("select#category_children1 :selected").val();
-		filterCategories(category_id, $("select#category_children2"));
 	});
 	
 	//if editing and value is already selected
@@ -123,7 +139,6 @@ $(function() {
     		$("#ad_category_id").val($(this).val());
     		filterParts($(this).val());
         })
-        //TODO kun ollaan edit näkymässä niin kengät ei toimi
 	});
 
 })

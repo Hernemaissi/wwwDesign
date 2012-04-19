@@ -1,5 +1,5 @@
 .picture {
-  width:100px; height: 250px; background-color:#ffffff;
+  /*width:100px; height: 250px; background-color:#ffffff;*/
 }
 .picture a.small, .picture a.small:visited { 
   display:block; width:100px; height:100px; text-decoration:none; background:#ffffff; top:0; left:0; border:0;

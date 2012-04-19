@@ -6,6 +6,7 @@ class AdsController < ApplicationController
     @ads = Ad.all
   end
   
+  
   def show
     @title = "Temp title"
     @ad = Ad.find(params[:id])

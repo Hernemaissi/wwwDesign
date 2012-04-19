@@ -17,8 +17,6 @@
   frakki = miehet.children.create("name" => "Frakki")
   saketti = miehet.children.create("name" => "Saketti")
   kengät = miehet.children.create("name" => "Kengät")
-  miehetkengät1 = kengät.children.create("name" => "Lakerikengät")
-  miehetkengät2 = kengät.children.create("name" => "Nahkakengät")
   
 
   naiset1 = naiset.children.create("name" => "Iltapuku")

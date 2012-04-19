@@ -1,0 +1,5 @@
+<div id="categories">
+	<% @categories.each do |c| %>
+		<%= link_to c.name, filterc_path(:id => c.id), :remote => true, :id => c.id %>
+	<% end %>
+</div>

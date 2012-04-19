@@ -1,0 +1,15 @@
+/* mark selected category with check */ 
+console.log("mark");
+$("#categories").children().each(function(){
+	$(this).removeClass("selected");
+});
+console.log("mark", $("#categories #<%= escape_javascript(@selected_category.id.to_s()) %>"));
+$("#categories #<%= escape_javascript(@selected_category.id.to_s()) %>").addClass("selected");
+
+/* get parts if any*/
+$("#parts").html("<%= escape_javascript(render :partial => 'search/filter_category', :locals => {:parts => @parts}) %>");
+
+/* get new ads filtered by selected category*/
+$("#ads").empty();
+$("#ads").html("<%= escape_javascript(render :partial => 'categories/categoryads', :locals => {:c => @selected_category}) %>");
+

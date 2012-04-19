@@ -8,17 +8,23 @@
         <% @user.ads.each do |ad| %>
         <div id="user_ad">
          <img src="<%=ad.image_url %>" title="ad"  width="100" height="100" />
-         <%= link_to "Requests: #{ad.requests.count}", ad %>
-         <%= link_to "Edit", edit_ad_path(ad) %>
+         <%= link_to "Vuokrauspyynnöt: #{ad.requests.count}", ad %>
+         <%= link_to "Muokkaa", edit_ad_path(ad) %>
         <% end %>
       <% end %>
     </td>
     <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
+      <strong>Nimi</strong> <%= @user.name %><br />
       <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
       <% if current_user?(@user) %>
-        <%= link_to "Post new ad", new_ad_path  %><br />
-        <strong>Notifications</strong> <%= @user.notifications %><br />
+        <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
+        <strong>Tiedotteet</strong> <%= @user.notifications %><br />
+      <% end %>
+      
+    </td>
+    <td class="sidebar round">
+      <% if current_user?(@user) %>
+        <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
       <% end %>
       
     </td>

@@ -1,6 +1,6 @@
 
 .container {
-  width: 710px;
+  width: 800px;
 }
 
 header {
@@ -31,7 +31,7 @@ section h1 {
 #gender_tab li {
 	float: left;
 	margin: 0 3px 0 0;
-	padding: 0 60px 0 25px;
+	padding: 5px 60px 5px 25px;
 	-webkit-border-top-left-radius: 4px;
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-radius-topleft: 4px;
@@ -54,11 +54,11 @@ nav ul {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 0.2em 0;
+  padding: 0.5em 0;
 }
 
 nav ul li a {
-  padding: 0 5px;
+  padding: 0.5em 1.8em;
   font-weight: bold;
 }
 
@@ -79,14 +79,18 @@ a.signup_button {
   background: #006400;
   font-size: 150%;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
+  
+  position:relative;
+  right: -300px;
+  top: 60px;
 }
 
 /* Round corners */
 
 .round {
   -moz-border-radius:    2px;
-  -webkit-border-radius: 2x;
+  -webkit-border-radius: 2px;
   border-radius:         2px;
 }
 
@@ -116,7 +120,6 @@ td.sidebar {
   width: 30%;
   padding: 1em;
   vertical-align: top;
-  background: #ffc;
 }
 
 .profile img.gravatar {
@@ -145,7 +148,6 @@ div.field, div.actions {
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
 }
 
 #error_explanation h2 {
@@ -159,9 +161,8 @@ div.field, div.actions {
 }
 
 #error_explanation p {
-  color: #333;
   margin-bottom: 0;
-  padding: 5px;
+  padding: 10px;
 }
 
 #error_explanation ul li {
@@ -178,4 +179,9 @@ ul.users {
   list-style: none;
 }
 
-#xhrflash {background:#e6efc2;color:#264409;border-color:#c6d880;}
+
+/* search page */
+
+#searchfilter .selected {
+	color: red;
+}

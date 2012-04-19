@@ -1,24 +1,24 @@
 <header>
   <nav class="round trans_bg">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Ads", ads_path %></li>
+      <li><%= link_to "Etusivu", root_path %></li>
+      <li><%= link_to "Haku", search_path %></li>
       <% if signed_in? %>
-      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to "Käyttäjät", users_path %></li>
       <% if current_user.notifications? %>
       <li><%= link_to "Profile(#{current_user.notifications})", current_user %></li>
       <% else %>
-      <li><%= link_to "Profile", current_user %></li>
+      <li><%= link_to "Profiili", current_user %></li>
       <% end %>
-      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <li><%= link_to "Asetukset", edit_user_path(current_user) %></li>
       <% end %>
-      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "Ohjeet", help_path %></li>
       <% if signed_in? %>
-      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      <li><%= link_to "Kirjaudu ulos", signout_path, :method => :delete %></li>
       <% else %>
-      <li><%= link_to "Sign in", signin_path %></li>
+      <li><%= link_to "Kirjaudu sisään", signin_path %></li>
       <% end %>
-      <li><%= link_to "Categories", categories_path %></li>
+      <li><%= link_to "Kategoriat", categories_path %></li>
     </ul>
   </nav>
 </header>

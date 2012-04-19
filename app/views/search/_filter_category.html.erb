@@ -1,0 +1,9 @@
+<% if !@parts.empty? %>
+	<div>Valitse puvun osat:</div>
+	<% @parts.each do |part| %>
+	  <%= check_box_tag part.name, part.id, false %> <%= part.name %>
+	  
+	<% end %>
+<% end %>
+
+
