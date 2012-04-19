@@ -42,6 +42,7 @@ a {
 
 a:hover {
   color: black;
+  background: white;
   text-decoration: underline;
 }
 
