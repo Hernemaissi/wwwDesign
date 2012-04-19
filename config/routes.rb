@@ -27,6 +27,7 @@ WwwDesign::Application.routes.draw do
   match '/search/', :to => 'search#index'
   match '/search/category/:id' => 'search#filter_category', :as => :filterc
   match '/search/category/:c_id/:p_id' => 'search#filter_parts', :as => :filterp
+  match '/search/filter' => 'search#filter', :as => :filter
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

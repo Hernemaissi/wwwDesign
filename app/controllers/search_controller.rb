@@ -31,4 +31,19 @@ class SearchController < ApplicationController
     end
   end
   
+
+  
+  def filter
+    @data = params[:data]
+    @category = Category.find(params[:category])
+    @results = @category.ads.available
+   
+    respond_to do |format|
+      #format.html { render :partial => 'categories/categoryads', :locals => {:c => @category} }
+      format.html { render :partial => 'search/results', :locals => {:results => @results} }
+    end
+  end
+
+
+  
 end
