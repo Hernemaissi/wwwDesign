@@ -10,7 +10,7 @@ h1, h2, h3 {
 	  /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(0, 0, 0);
 	/* RGBa with 0.6 opacity */
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.6);
 }
 
 #gender_tab li {
@@ -18,19 +18,21 @@ h1, h2, h3 {
 	  /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(20, 20, 20);
 	/* RGBa with 0.6 opacity */
-	background: rgba(20, 20, 20, 0.7);
+	background: rgba(20, 20, 20, 0.5);
 		color: 	#C2C2C2;
 }
 
 #gender_tab .selected {
-	background: rgba(0, 0, 0, 0.7);
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.6);
 	color: white;
 }
 #gender_tab :hover{
 	background: #000000;
 	color: white;
 	text-decoration: underline;
-
 }
 
 
