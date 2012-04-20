@@ -17,19 +17,34 @@ class Ad < ActiveRecord::Base
   validates :size, :presence => true
   
   
-  #scope :by_category, lambda {|category| {:conditions => {:category_id => category.id}}}
-  #scope :available, :conditions => {:available => true}
-  #scope :parts, 
+  scope :available, :conditions => {:available => true}
+
+  #scope :with_part, lambda { |part_id| { :joins => :parts, 
+  #                                           :conditions => {:parts => {:id => part_id} } } }
+
   
+
   
-  def self.available(value)
-    where(:available => value)
+  def self.price_lower(price)
+    where("price < ?", price)
   end
   
-  def self.with_part(id)
-    where(:part_id => id)
+  def self.price_higher(price)
+    where("price > ?", price)
   end
   
+  def self.price_between(low, high)
+    where("price BETWEEN ? AND ?", low, high)
+  end
+  
+  def self.in_categories(ids)
+     joins(:category).where("category_id IN (?)", ids)
+  end
+
+  def self.with_parts(ids)
+     joins(:parts).where("part_id = ?", ids)
+     #joins(:parts).where("part_id IN (?)", ids)
+  end
 
 
 end

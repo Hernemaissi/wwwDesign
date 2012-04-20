@@ -1,3 +1,7 @@
-<% results.each do |ad| %>
-		<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+<% if results %>
+	<% results.each do |ad| %>
+			<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+	<% end %>
+<% else %>
+	Ei tuloksia.
 <% end %>

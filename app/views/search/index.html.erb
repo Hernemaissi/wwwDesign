@@ -5,6 +5,14 @@
 	
 	<div id="parts">
 	</div>
+	
+	<div id="available">
+		<input type="checkbox" name="available" value="available" checked="true"/> Näytä vain vapaat
+	</div>
+	
+	<div id="price">
+		Hinta: <input type="text" id="price_lower" name="price_lower"/> - <input type="text" id="price_higher" name="price_higher"/>
+	</div>
 </div>
 <div id="ads">
 <% @categories.each do |c| %>

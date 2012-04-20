@@ -80,16 +80,43 @@ $(function() {
 	/* search filter */
 	
 	$(function($) {
-	    $("#searchfilter #parts input").live('change', function() {
-	    	var category = $("#categories .selected").attr('id');
+	    $("#searchfilter").live('change', function() {
+	    	
+	    	var categories = [];
+	    	$("#categories .selected").each(function() {
+	            categories.push($(this).attr('id'));
+	        }); 
+	    	if(categories.length === 0){
+	    		$("#categories a").each(function(){
+	    			categories.push(this.id);
+	    		});
+	    	}
+	    	
 	    	var parts = [];
-	    	$("#searchfilter #parts input:checked").each(function(){
+	    	$("#parts input:checked").each(function(){
     			parts.push(this.value);
     		});
 	    	
+	    	var available = false;
+	    	if($("#available input").attr('checked')){
+	    		var available = true;
+	    	}
+	    	
+	    	var price_lower;
+	    	var price_higher; 
+	    	if($("#price_lower")){
+	    		price_lower = $("#price_lower").val();
+	    	}
+	    	if($("#price_higher")){
+	    		price_higher = $("#price_higher").val();
+	    	}
+	    	
 	    	var data = {
-	    		'category': category,
-	    		'parts': parts
+	    		'categories': categories,
+	    		'parts': parts,
+	    		'available': available,
+	    		'price_higher': price_higher,
+	    		'price_lower': price_lower
 	    	}
 	    	
 	    	console.log(data);
