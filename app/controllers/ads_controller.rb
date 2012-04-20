@@ -53,8 +53,10 @@ class AdsController < ApplicationController
      if current_user?(@ad.user) && request.post?
        @ad.available = (@ad.available?) ? false : true
        @ad.save
-       flash[:success] = "Availability toggled"
-       redirect_to @ad
+       respond_to do |format|
+         format.html { redirect_to @ad, :success => "Availability toggled" }
+         format.js
+       end
      else
        redirect_to root_path
      end

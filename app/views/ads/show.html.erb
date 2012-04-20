@@ -1,4 +1,4 @@
-
+  <div id="xhrflash"></div>
   <img src="<%=@ad.image_url%>" alt="Ad" /><br />
   Nimi: <%=@ad.title%><br />
   Vuokra: <%=@ad.price%><br />
@@ -42,7 +42,7 @@
   Omistaja: <%=@ad.user.name%>
   <% if current_user?(@ad.user) %>
     <div>
-    	<%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post) %>
+    	<%= link_to("Toggle available",  toggle_path(:id => @ad.id), :method => :post, :remote => true) %>
     </div>
     	<%= link_to "Edit", edit_ad_path(@ad) %>
     <div>
