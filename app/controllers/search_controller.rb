@@ -47,10 +47,10 @@ class SearchController < ApplicationController
     
    if(!params[:price_lower].empty? && !params[:price_higher].empty?)
       @results = @results.price_between(params[:price_lower], params[:price_higher])
-   elsif (!params[:price_lower].empty?)
-      @results = @results.price_lower(params[:price_lower])
-   elsif(!params[:price_higher].empty?)
-      @results = @results.price_higher(params[:price_higher])
+   elsif (!params[:price_higher].empty?)
+      @results = @results.price_lower(params[:price_higher])
+   elsif(!params[:price_lower].empty?)
+      @results = @results.price_higher(params[:price_lower])
    end
    
    #TONIIIIIII ;_______________;

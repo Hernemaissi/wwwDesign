@@ -9,6 +9,58 @@
 //= require jquery-ui
 //= require_tree .
 
+
+//search filter
+
+function filterResults() {
+	var categories = [];
+	$("#categories .selected").each(function() {
+        categories.push($(this).attr('id'));
+    }); 
+	if(categories.length === 0){
+		$("#categories a").each(function(){
+			categories.push(this.id);
+		});
+	}
+	
+	var parts = [];
+	$("#parts input:checked").each(function(){
+		parts.push(this.value);
+	});
+	
+	var available = false;
+	if($("#available input").attr('checked')){
+		var available = true;
+	}
+	
+	var price_lower;
+	var price_higher; 
+	if($("#price_lower")){
+		price_lower = $("#price_lower").val();
+	}
+	if($("#price_higher")){
+		price_higher = $("#price_higher").val();
+	}
+	
+	var data = {
+		'categories': categories,
+		'parts': parts,
+		'available': available,
+		'price_higher': price_higher,
+		'price_lower': price_lower
+	}
+	
+	console.log(data);
+    $.ajax({
+    	url: "/search/filter/",
+    	data: data,
+    	dataType: 'html',
+    	success: function(data){
+    		console.log("success");
+    		$("#ads").html(data);
+    	}
+    });
+}
 //display or empty part checkboxes
 function filterParts(category_id) {  
 	if(category_id != null) {
@@ -77,58 +129,11 @@ function filterCategories(category_id, $category) {
 }  
 
 $(function() {
-	/* search filter */
 	
+	/* search filter */
 	$(function($) {
 	    $("#searchfilter").live('change', function() {
-	    	
-	    	var categories = [];
-	    	$("#categories .selected").each(function() {
-	            categories.push($(this).attr('id'));
-	        }); 
-	    	if(categories.length === 0){
-	    		$("#categories a").each(function(){
-	    			categories.push(this.id);
-	    		});
-	    	}
-	    	
-	    	var parts = [];
-	    	$("#parts input:checked").each(function(){
-    			parts.push(this.value);
-    		});
-	    	
-	    	var available = false;
-	    	if($("#available input").attr('checked')){
-	    		var available = true;
-	    	}
-	    	
-	    	var price_lower;
-	    	var price_higher; 
-	    	if($("#price_lower")){
-	    		price_lower = $("#price_lower").val();
-	    	}
-	    	if($("#price_higher")){
-	    		price_higher = $("#price_higher").val();
-	    	}
-	    	
-	    	var data = {
-	    		'categories': categories,
-	    		'parts': parts,
-	    		'available': available,
-	    		'price_higher': price_higher,
-	    		'price_lower': price_lower
-	    	}
-	    	
-	    	console.log(data);
-	        $.ajax({
-	        	url: "/search/filter/",
-	        	data: data,
-	        	dataType: 'html',
-	        	success: function(data){
-	        		console.log("success");
-	        		$("#ads").html(data);
-	        	}
-	        });
+	    	filterResults();
 	    });
 	}); 
 	
@@ -141,6 +146,11 @@ $(function() {
 			$("#gender_tab li").each(function(){
 				$(this).toggleClass('selected');
 			});
+			
+			//update content
+	        $.ajax({
+	        	url: "/gender/" + $("a", this).html() + "/",
+	            dataType: 'script'});
 		}
 	});
 	
@@ -150,7 +160,7 @@ $(function() {
 		// get subtree and replace selects
 		var category_id = $("select#category_root :selected").val();
 	    $("select#category_children1").empty().hide();
-		filterCategories(category_id, $("select#category_children1"))
+		filterCategories(category_id, $("select#category_children1"));
 	});
 	
 	//children of miehet/naiset changes

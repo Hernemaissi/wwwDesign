@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
   def change_gender
     cookies.permanent.signed[:gender] = params[:gender]
     @categories = Category.find_by_name(params[:gender]).children
+    @current_gender = params[:gender]
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js
