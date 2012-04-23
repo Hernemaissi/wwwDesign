@@ -10,7 +10,6 @@ class SearchController < ApplicationController
       @current_gender = "Miehet"
     end
     @category = Category
-   
   end
 
   def filter_category
@@ -51,6 +50,14 @@ class SearchController < ApplicationController
       @results = @results.price_lower(params[:price_higher])
    elsif(!params[:price_lower].empty?)
       @results = @results.price_higher(params[:price_lower])
+   end
+   
+   if (!params[:condition].empty?)
+     @results = @results.in_condition(params[:condition])
+   end
+   
+   if (!params[:color].empty?)
+     @results = @results.in_color(params[:color])
    end
    
    #TONIIIIIII ;_______________;

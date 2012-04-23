@@ -46,6 +46,13 @@ class Ad < ActiveRecord::Base
      #joins(:parts).where("part_id IN (?)", ids)
   end
 
+  def self.in_condition(condition)
+    where("condition = ?", condition)
+  end
+  
+  def self.in_color(color)
+    where("color = ?", color)
+  end
 
 end
 

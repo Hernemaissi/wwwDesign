@@ -1,9 +1,18 @@
+//Home
 $("#ads").empty();
 <% @categories.each do |c| %>
 	$("#ads").append("<%= escape_javascript(render :partial => 'categories/categoryads', :locals => {:c => c}) %>");
 <% end %>
 
-$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
-
 $("#category_sidebar").html("<%= escape_javascript(render :partial => 'categories/sidebar') %>");
 
+
+//Search
+$("#results").empty();
+<% @categories.each do |c| %>
+	<% c.ads.available.each do |ad| %>
+		$("#results").append("<%= escape_javascript(render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad}) %>");
+	<% end %>
+<% end %>
+
+$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");

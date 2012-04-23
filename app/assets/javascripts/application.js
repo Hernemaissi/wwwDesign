@@ -42,22 +42,27 @@ function filterResults() {
 		price_higher = $("#price_higher").val();
 	}
 	
+	var condition = $("#condition select").val();
+	
+	var color = $("#color select").val();
+	
 	var data = {
 		'categories': categories,
 		'parts': parts,
 		'available': available,
 		'price_higher': price_higher,
-		'price_lower': price_lower
+		'price_lower': price_lower,
+		'condition': condition,
+		'color': color
 	}
 	
-	console.log(data);
+	console.log("filter", data);
     $.ajax({
     	url: "/search/filter/",
     	data: data,
     	dataType: 'html',
     	success: function(data){
-    		console.log("success");
-    		$("#ads").html(data);
+    		$("#results").html(data);
     	}
     });
 }
@@ -177,5 +182,7 @@ $(function() {
     		filterParts($(this).val());
         })
 	});
+	
+	
 
 })
