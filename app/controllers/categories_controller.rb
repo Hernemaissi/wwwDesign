@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_filter :admin_only, :only => [:create, :destroy, :new, :edit, :update, :index, :show]
   def index
     @title = "All Categories"
     @categories = Category.all

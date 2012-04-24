@@ -4,7 +4,9 @@
       <li><%= link_to "Etusivu", root_path %></li>
       <li><%= link_to "Haku", search_path %></li>
       <% if signed_in? %>
+      <% if signed_in? && current_user.admin %>
       <li><%= link_to "Käyttäjät", users_path %></li>
+      <% end %>
       <% if current_user.notifications? %>
       <li><%= link_to "Profile(#{current_user.notifications})", current_user %></li>
       <% else %>
@@ -18,7 +20,9 @@
       <% else %>
       <li><%= link_to "Kirjaudu sisään", signin_path %></li>
       <% end %>
+      <% if signed_in? && current_user.admin %>
       <li><%= link_to "Kategoriat", categories_path %></li>
+      <% end %>
     </ul>
   </nav>
 </header>

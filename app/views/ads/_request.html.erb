@@ -1,4 +1,4 @@
-<%= form_for current_user.requests.
+﻿<%= form_for current_user.requests.
                           build(:ad_id => @ad.id) do |f| %>
   <div><%= f.hidden_field :ad_id %></div>
   <div> Vuokrauksen alkamispäivä: <%= date_select :request, :start_date %></div>
