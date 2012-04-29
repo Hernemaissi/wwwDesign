@@ -20,7 +20,7 @@
   <body>
     <div class="container">
     	<a class="signup_button round" href="/signup">Sign up now!</a>
-    	<%= link_to logo, root_path %>
+    	<%= link_to logo, root_path, :id => "logo" %>
 	
       <ul id="gender_tab">
 		    <li id="gender_male" class="trans_bg 
@@ -28,14 +28,14 @@
   						selected
     			<% end %>
     			">
-    			<%= link_to "Miehet", "/gender/Miehet", :remote => true %>
+    			<%= link_to "Miehet", "/gender/Miehet" %>
     		</li> 
 		    <li id="gender_female" class="trans_bg
 		    	<% if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset" %> 
   						selected
     			<% end %>		    	
 			    ">
-			    <%= link_to "Naiset", "/gender/Naiset", :remote => true %>
+			    <%= link_to "Naiset", "/gender/Naiset" %>
 		    </li> 
 		  </ul> 
       

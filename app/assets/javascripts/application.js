@@ -151,11 +151,12 @@ $(function() {
 			$("#gender_tab li").each(function(){
 				$(this).toggleClass('selected');
 			});
-			
-			//update content
-	        $.ajax({
+			console.log("update content for gender ", "/gender/" + $("a", this).html() + "/");
+			//update content (for <li>, remote-link only for <a>)
+	       /* $.ajax({
 	        	url: "/gender/" + $("a", this).html() + "/",
-	            dataType: 'script'});
+	            dataType: 'script'
+	        });*/
 		}
 	});
 	

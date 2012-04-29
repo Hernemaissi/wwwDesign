@@ -8,11 +8,15 @@ $("#category_sidebar").html("<%= escape_javascript(render :partial => 'categorie
 
 
 //Search
-$("#results").empty();
-<% @categories.each do |c| %>
-	<% c.ads.available.each do |ad| %>
-		$("#results").append("<%= escape_javascript(render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad}) %>");
-	<% end %>
-<% end %>
+$("#results").html("
+	<%= escape_javascript(
+		render :partial => 'search/results', :locals => 
+			{:results => Ad.paginate(:page => params[:page], :per_page => 3, :conditions =>   ['category_id IN (?) ' , @categories ] )}
+	) %>
+");
+
 
 $("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
+
+//logo
+$("#logo").html("<%= escape_javascript(link_to logo, root_path, :id => "logo") %>");

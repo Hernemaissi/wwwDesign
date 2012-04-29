@@ -10,6 +10,8 @@ class SearchController < ApplicationController
       @current_gender = "Miehet"
     end
     @category = Category
+    #should be changed to Ad.in_categories(ids)...
+    @results = Ad.paginate :page => params[:page], :per_page => 3, :conditions =>   ['category_id IN (?) ' , @categories ] 
   end
 
   def filter_category
