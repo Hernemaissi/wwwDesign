@@ -10,8 +10,7 @@ class SearchController < ApplicationController
       @current_gender = "Miehet"
     end
     @category = Category
-    #should be changed to Ad.in_categories(ids)...
-    @results = Ad.paginate :page => params[:page], :per_page => 3, :conditions =>   ['category_id IN (?) ' , @categories ] 
+    @results = Ad.in_categories(@categories).available(true).paginate :page => params[:page], :per_page => 3 
   end
 
   def filter_category
@@ -66,6 +65,7 @@ class SearchController < ApplicationController
    #@results = @results.with_parts(params[:parts][0]) <- toimii
    #@results = @results.with_parts(params[:parts][1]) <- ei enää toimi
    
+   @results = @results.paginate :page => params[:page], :per_page => 3 
     respond_to do |format|
       format.html { 
         render :partial => 'search/results', :locals => {:results => @results} }

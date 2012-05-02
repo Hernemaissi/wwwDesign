@@ -29,7 +29,7 @@ h1, h2, h3 {
 	background: rgba(0, 0, 0, 0.6);
 	color: white;
 }
-#gender_tab :hover{
+nav li :hover, #gender_tab :hover{
 	background: #000000;
 	color: white;
 	text-decoration: underline;
@@ -47,7 +47,6 @@ a {
 a:hover {
   color: white;
   text-decoration: underline;
-  background: #000000;
 }
 
 a:visited {
