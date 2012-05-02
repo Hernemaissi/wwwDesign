@@ -43,7 +43,6 @@ class Ad < ActiveRecord::Base
 
   def self.with_parts(ids)
      joins(:parts).where("part_id = ?", ids)
-     #joins(:parts).where("part_id IN (?)", ids)
   end
 
   def self.in_condition(condition)
