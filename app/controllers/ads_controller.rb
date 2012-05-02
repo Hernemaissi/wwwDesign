@@ -10,6 +10,10 @@ class AdsController < ApplicationController
   def show
     @title = "Temp title"
     @ad = Ad.find(params[:id])
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def create
@@ -61,9 +65,6 @@ class AdsController < ApplicationController
        redirect_to root_path
      end
   end
-
-  
-
   
   
 end

@@ -50,5 +50,7 @@
     </div>
   <% end %>
   <br />
-  <%= render 'request_form' if signed_in? %>
+  <div id="request_button">
+    <%= link_to "Edit Request", @ad,  :remote => true %>
+  </div>
   <%= render 'show_requests' if current_user?(@ad.user) %>

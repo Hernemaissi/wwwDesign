@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -44,5 +46,9 @@ module WwwDesign
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    #Global variables
+    CONDITIONS = ["uudenveroinen", "hyvä", "tyydyttävä", "heikko"]
+    COLORS = ["musta", "ruskea", "harmaa", "sininen", "punainen", "virheä"] 
   end
 end

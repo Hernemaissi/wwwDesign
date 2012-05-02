@@ -1,23 +1,10 @@
 <div id="searchfilter">
-	<div><%= @current_gender %></div>
-	<div>Valitse vaatetyyppi:</div>
 	<%= render "search/search_filter", :categories => @categories %>
-	
-	<div id="parts">
-	</div>
-	
-	<div id="available">
-		<input type="checkbox" name="available" value="available" checked="true"/> Näytä vain vapaat
-	</div>
-	
-	<div id="price">
-		Hinta: <input type="text" id="price_lower" name="price_lower"/> - <input type="text" id="price_higher" name="price_higher"/>
-	</div>
 </div>
-<div id="ads">
+<div id="results">
 <% @categories.each do |c| %>
-  <% unless c.is_root? %>
-    <%= render "categories/categoryads", :c => c %>
+	<% c.ads.available.each do |ad| %>
+  	<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
   <% end %>
 <% end %>
 </div>

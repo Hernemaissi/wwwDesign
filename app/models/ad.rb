@@ -11,7 +11,7 @@ class Ad < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :category_id, :presence => true
   validates :image_url, :presence => true
-  validates :price, :presence => true
+  validates :price, :presence => true, :numericality => true
   validates :title, :presence => true
   validates :condition, :presence => true
   validates :size, :presence => true
@@ -46,6 +46,13 @@ class Ad < ActiveRecord::Base
      #joins(:parts).where("part_id IN (?)", ids)
   end
 
+  def self.in_condition(condition)
+    where("condition = ?", condition)
+  end
+  
+  def self.in_color(color)
+    where("color = ?", color)
+  end
 
 end
 
@@ -56,7 +63,7 @@ end
 #  id          :integer         not null, primary key
 #  description :string(255)
 #  image_url   :string(255)
-#  price       :string(255)
+#  price       :decimal(, )
 #  available   :boolean         default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime

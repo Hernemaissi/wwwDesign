@@ -39,6 +39,12 @@ module SessionsHelper
     redirect_to(session[:return_to] || default)
     clear_return_to
   end
+  
+  def admin_only
+    unless signed_in? && current_user.admin
+      not_found
+    end
+  end
 
   private
 
@@ -56,5 +62,9 @@ module SessionsHelper
 
     def clear_return_to
       session[:return_to] = nil
+    end
+    
+    def not_found
+      raise ActionController::RoutingError.new('Not Found')
     end
 end
