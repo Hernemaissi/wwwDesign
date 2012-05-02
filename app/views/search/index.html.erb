@@ -2,10 +2,5 @@
 	<%= render "search/search_filter", :categories => @categories %>
 </div>
 <div id="results">
-<% @categories.each do |c| %>
-	<% c.ads.available.each do |ad| %>
-  	<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
-  <% end %>
-<% end %>
+	<%= render :partial => 'search/results', :locals => {:results => @results} %>
 </div>
-
