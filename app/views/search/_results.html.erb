@@ -1,7 +1,8 @@
-<% if results %>
-	<% results.each do |ad| %>
+<% if @results %>
+	<% @results.each do |ad| %>
 			<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
 	<% end %>
+	<%= will_paginate @results %>
 <% else %>
 	Ei tuloksia.
 <% end %>

@@ -134,7 +134,21 @@ function filterCategories(category_id, $category) {
 }  
 
 $(function() {
-	
+    $(function () {  
+        $('.pagination a').live("click", function () {  
+            $.ajax({
+            	url: this.href,
+            	data: null,
+            	dataType: 'html',
+            	success: function(data){
+            		console.log("success", data);
+            		$("#results").html(data);
+            	}
+            });
+            return false;  
+        });  
+    });   
+    
 	/* search filter */
 	$(function($) {
 	    $("#searchfilter").live('change', function() {
@@ -143,7 +157,7 @@ $(function() {
 	}); 
 	
 	
-	/* change stylesheets when gender tab changes, should be moved to sessions/change_gender */
+	/* change stylesheets and update content when gender tab changes */
 	$("#gender_tab li").click(function(){
 		if(!$(this).hasClass("selected")){
 			var id = $(this).attr("id");
@@ -154,7 +168,7 @@ $(function() {
 			
 			//update content
 	        $.ajax({
-	        	url: "/gender/" + $("a", this).html() + "/",
+	        	url: "/gender/" + id + "/",
 	            dataType: 'script'});
 		}
 	});

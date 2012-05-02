@@ -9,6 +9,10 @@ module ApplicationHelper
     end
   end
   def logo
-    image_tag("logo.png", :alt => "Sample App", :class => "round")
+    if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset"
+      image_tag("logo_black.png", :alt => "Suit up", :class => "round")
+    else
+      image_tag("logo_white.png", :alt => "Suit up", :class => "round")
+    end
   end
 end
