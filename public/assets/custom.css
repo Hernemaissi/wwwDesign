@@ -13,7 +13,8 @@ header img {
 section {
   margin-top: 1em;
   font-size: 120%;
-  padding: 20px;
+  padding: 10px;
+  height: 1000px;
 }
 
 section h1 {
@@ -62,7 +63,6 @@ nav ul li a {
   font-weight: bold;
 }
 
-
 nav ul li a:hover {
   text-decoration: underline;
 }
@@ -84,6 +84,70 @@ a.signup_button {
   position:relative;
   right: -300px;
   top: 60px;
+}
+
+/* Front page pictures */
+
+#ad_pictures {
+	width: 100px;
+    padding: 10px;
+    margin: 20px 5px 20px 5px;
+    float: left;
+    text-align:center;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+}
+
+img.large{
+	vertical-align: middle;
+	display: block;
+	margin-left: auto;
+    margin-right: auto
+}
+
+#ads{
+	width: 550px;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    overflow:   auto;	
+}
+
+.Category_name{
+	height: 20px;
+	width: 520px;
+	padding: 5px;
+	margin: 10px;
+	clear: both;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+ 	/* RGBa with 0.6 opacity */
+/*background: rgba(20, 20, 20, 0.5);*/
+}
+
+.Category_name a{
+	display: block;	
+}
+
+.Category_name :hover{
+  	text-decoration: underline;
+}
+
+#category_sidebar{
+	width: 160px;
+	max-height: 960px;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    overflow:   auto;
 }
 
 /* Round corners */
