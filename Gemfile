@@ -31,6 +31,11 @@ group :assets do
   gem 'uglifier', '>=1.0.3'
 end
 
+group :production do
+  gem "pg"
+end
+
+
 gem 'jquery-rails', '>= 1.0.12'
 
 #https://github.com/stefankroes/ancestry
