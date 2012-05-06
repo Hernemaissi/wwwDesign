@@ -91,7 +91,7 @@ a.signup_button {
 #ad_pictures {
 	width: 100px;
     padding: 10px;
-    margin: 20px 5px 20px 5px;
+    margin: 0px 0px 10px 5px;
     float: left;
     text-align:center;
     -moz-border-radius:    2px;
@@ -126,8 +126,6 @@ img.large{
 	-moz-border-radius:    2px;
     -webkit-border-radius: 2px;
     border-radius:         2px;
- 	/* RGBa with 0.6 opacity */
-/*background: rgba(20, 20, 20, 0.5);*/
 }
 
 .Category_name a{

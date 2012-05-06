@@ -5,51 +5,55 @@ body {
 
 .trans_bg {
 	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
+	background: rgb(100, 40, 40);
 	/* RGBa with 0.6 opacity */
-	background: rgba(80, 80, 80, 0.7);
+	background: rgba(100,40,40, 0.6);
+
 }
 
 #gender_tab li {
-	background: #999999;
+	background: #FF9999;
 	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80,80,80);
+	background: rgb(100, 40, 40);
 	/* RGBa with 0.6 opacity */
-	background: rgba(80,80,80, 0.4);
+	background: rgba(100,40,40, 0.6);
 	color: 	#303030;
 }
 
 #gender_tab .selected {
+		background: #FF9999;
 	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
+	background: rgb(100, 40, 40);
 	/* RGBa with 0.6 opacity */
-	background: rgba(80, 80, 80, 0.7);
+	background: rgba(100,40,40, 0.3);
 	color: black;
 }
 
 nav li :hover, #gender_tab :hover{
-	background: rgb(80, 80, 80);
+	background: rgb(100, 40, 40);
+	/* RGBa with 0.6 opacity */
+	background: rgba(100,40,40, 0.9);
 	color: black;
 	text-decoration: underline;
 }
 
 #ad_pictures {
-    background: #999999;
- 	/* RGBa with 0.6 opacity */
-	background: rgba(42, 42, 42, 0.85);
+   	background: rgb(100, 40, 40);
+	/* RGBa with 0.6 opacity */
+	background: rgba(100,40,40, 0.3);
 }
 
 #ads{
-    background: #C2C2C2;
-    	/* RGBa with 0.6 opacity */
-	background: rgba(42, 42, 42, 0.50);
+    	background: rgb(100, 40, 40);
+	/* RGBa with 0.6 opacity */
+	background: rgba(100,20,20, 0.3);
 }
 
 
 #category_sidebar{
- 	background: #C2C2C2;
-    	/* RGBa with 0.6 opacity */
-	background: rgba(42, 42, 42, 0.50);
+ 		background: rgb(100, 40, 40);
+	/* RGBa with 0.6 opacity */
+	background: rgba(100,20,20, 0.3);
 }
 
 .Category_name{
@@ -79,4 +83,8 @@ nav ul li a:visited {
 
 td.sidebar {
   background: #ffc;
+}
+
+a.signup_button {
+  background: #CC0000;
 }

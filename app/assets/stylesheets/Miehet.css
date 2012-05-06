@@ -14,12 +14,12 @@ h1, h2, h3 {
 }
 
 #gender_tab li {
-	background: #141414;
+	background: #CCCCCC;
 	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(20, 20, 20);
+	background: rgb(80, 80, 80);
 	/* RGBa with 0.6 opacity */
-	background: rgba(20, 20, 20, 0.5);
-		color: 	#C2C2C2;
+	background: rgba(80, 80, 80, 0.5);
+	color: 	white;
 }
 
 #gender_tab .selected {
@@ -37,20 +37,25 @@ nav li :hover, #gender_tab :hover{
 
 #ad_pictures {
     background: #222222;
+    background: rgb(0, 0, 0);
  	/* RGBa with 0.6 opacity */
-	background: rgba(20, 20, 20, 0.5);
+	background: rgba(0, 0, 0, 0.4);
 }
 
 #ads{ 
-    background: #999999;
-    	/* RGBa with 0.6 opacity */
-	background: rgba(42, 42, 42, 0.85);
+    background: #CCCCCC;
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(80, 80, 80);
+	/* RGBa with 0.6 opacity */
+	background: rgba(80, 80, 80, 0.4);
 }
 
 #category_sidebar{
- 	background: #999999;
-    	/* RGBa with 0.6 opacity */
-	background: rgba(42, 42, 42, 0.85);
+ 	background: #CCCCCC;
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(80, 80, 80);
+	/* RGBa with 0.6 opacity */
+	background: rgba(80, 80, 80, 0.4);
 }
 
 .Category_name{
@@ -79,6 +84,11 @@ nav ul li a:visited {
 
 td.sidebar {
   background: #222;
+}
+
+a.signup_button {
+  background: #529214;
+
 }
 
 
