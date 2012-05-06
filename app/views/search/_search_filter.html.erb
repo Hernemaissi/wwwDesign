@@ -2,6 +2,8 @@
 	<div><%= @current_gender %></div>
 	<div>Valitse vaatetyyppi:</div>
 	
+	<a class="selected" href="">Kaikki</a>
+	
 	<% @categories.each do |c| %>
 		<%= link_to c.name, filterc_path(:id => c.id), :remote => true, :id => c.id %>
 	<% end %>
