@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_filter :admin_only, :only => [:create, :destroy, :new, :edit, :update, :index, :show]
+  before_filter :admin_only, :only => [:create, :destroy, :new, :edit, :update, :index]
   def index
     @title = "All Categories"
     @categories = Category.all
@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     respond_to do |format|
       format.js
+      format.html {redirect_to root_path}
     end
   end
 

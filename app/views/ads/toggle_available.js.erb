@@ -1,7 +1,7 @@
 <% if @ad.available %>
-  $("#available").html("Currently Available")
+  $("#available").html("Vapaa / Vuokrattavissa")
+  $("#toggle").html("<%= escape_javascript(link_to("Merkitse varatuksi",  toggle_path(:id => @ad.id), :method => :post, :remote => true)) %>")
 <% else %>
-  $("#available").html("Currently Taken")
+  $("#available").html("Parhaillaan vuokrassa")
+    $("#toggle").html("<%= escape_javascript(link_to("Merkitse vapaaksi",  toggle_path(:id => @ad.id), :method => :post, :remote => true)) %>")
 <% end %>
-
-$("#xhrflash").html("Availability toggled")
