@@ -20,6 +20,7 @@ WwwDesign::Application.routes.draw do
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/ads/toggle/:id' => 'ads#toggle_available', :as => :toggle
+  match '/ads/:id/show_request' => 'ads#show_request', :as => :show_request
   match '/categories/filter_categories/:id', :controller=>'categories', :action => 'filter_categories'
   match '/categories/get_parts/:id', :controller=>'categories', :action => 'get_parts'
   match '/gender/:gender', :to => 'sessions#change_gender'

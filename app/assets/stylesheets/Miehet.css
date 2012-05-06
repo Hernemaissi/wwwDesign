@@ -6,7 +6,6 @@ body {
 h1, h2, h3 {
 	color: white;
 }
-
 .trans_bg {
 	  /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(0, 0, 0);
@@ -30,8 +29,7 @@ h1, h2, h3 {
 	background: rgba(0, 0, 0, 0.6);
 	color: white;
 }
-
-#gender_tab :hover{
+nav li :hover, #gender_tab :hover{
 	background: #000000;
 	color: white;
 	text-decoration: underline;
@@ -82,6 +80,7 @@ nav ul li a:visited {
 td.sidebar {
   background: #222;
 }
+
 
 #error_explanation {
   background-color: #141414;

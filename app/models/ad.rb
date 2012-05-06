@@ -11,26 +11,47 @@ class Ad < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :category_id, :presence => true
   validates :image_url, :presence => true
-  validates :price, :presence => true
+  validates :price, :presence => true, :numericality => true
   validates :title, :presence => true
   validates :condition, :presence => true
   validates :size, :presence => true
   
   
-  #scope :by_category, lambda {|category| {:conditions => {:category_id => category.id}}}
-  #scope :available, :conditions => {:available => true}
-  #scope :parts, 
-  
-  
-  def self.available(value)
-    where(:available => value)
-  end
-  
-  def self.with_part(id)
-    where(:part_id => id)
-  end
+  scope :available, :conditions => {:available => true}
+
+  #scope :with_part, lambda { |part_id| { :joins => :parts, 
+  #                                           :conditions => {:parts => {:id => part_id} } } }
+
   
 
+  
+  def self.price_lower(price)
+    where("price < ?", price)
+  end
+  
+  def self.price_higher(price)
+    where("price > ?", price)
+  end
+  
+  def self.price_between(low, high)
+    where("price BETWEEN ? AND ?", low, high)
+  end
+  
+  def self.in_categories(ids)
+     joins(:category).where("category_id IN (?)", ids)
+  end
+
+  def self.with_parts(ids)
+     joins(:parts).where("part_id = ?", ids)
+  end
+
+  def self.in_condition(condition)
+    where("condition = ?", condition)
+  end
+  
+  def self.in_color(color)
+    where("color = ?", color)
+  end
 
 end
 
@@ -41,7 +62,7 @@ end
 #  id          :integer         not null, primary key
 #  description :string(255)
 #  image_url   :string(255)
-#  price       :string(255)
+#  price       :decimal(, )
 #  available   :boolean         default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime

@@ -4,6 +4,5 @@
 	<a class="small" href="/ads/<%=ad.id%>/" title="small image"><img src="<%=ad.image_url %>" title="small image" width="100" height="100" />
 	<img class="large" src="<%=ad.image_url %>" title="large image" /></a>
 </div>
-
-Vuokra: <%=ad.price%>
+Vuokra: <%=number_to_currency(ad.price, :unit => "€")%>
 </div>

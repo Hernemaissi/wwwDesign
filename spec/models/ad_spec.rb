@@ -11,7 +11,7 @@ end
 #  id          :integer         not null, primary key
 #  description :string(255)
 #  image_url   :string(255)
-#  price       :string(255)
+#  price       :decimal(, )
 #  available   :boolean         default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime

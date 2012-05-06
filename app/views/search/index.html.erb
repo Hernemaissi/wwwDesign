@@ -1,16 +1,6 @@
 <div id="searchfilter">
-	<div><%= @current_gender %></div>
-	<div>Valitse vaatetyyppi:</div>
 	<%= render "search/search_filter", :categories => @categories %>
-	
-	<div id="parts">
-	</div>
 </div>
-<div id="ads">
-<% @categories.each do |c| %>
-  <% unless c.is_root? %>
-    <%= render "categories/categoryads", :c => c %>
-  <% end %>
-<% end %>
+<div id="results">
+	<%= render :partial => 'search/results', :locals => {:results => @results} %>
 </div>
-

@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120321232629) do
+ActiveRecord::Schema.define(:version => 20120420114805) do
 
   create_table "ads", :force => true do |t|
     t.string   "description"
     t.string   "image_url"
-    t.string   "price"
+    t.decimal  "price"
     t.boolean  "available",   :default => true
     t.datetime "created_at"
     t.datetime "updated_at"

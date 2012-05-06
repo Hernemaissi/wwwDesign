@@ -1,8 +1,15 @@
+//Home
 $("#ads").empty();
 <% @categories.each do |c| %>
 	$("#ads").append("<%= escape_javascript(render :partial => 'categories/categoryads', :locals => {:c => c}) %>");
 <% end %>
 
-$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
-
 $("#category_sidebar").html("<%= escape_javascript(render :partial => 'categories/sidebar') %>");
+
+
+//Search
+$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
+filterResults();
+
+//logo
+$("#logo").html("<%= escape_javascript(link_to logo, root_path, :id => "logo") %>");

@@ -9,9 +9,9 @@
     
 
     <% if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset" %> 
-    	<%= stylesheet_link_tag "gender_female", :id => "switch_style" %>
+    	<%= stylesheet_link_tag "Naiset", :id => "switch_style" %>
     <% else %>
-    	<%= stylesheet_link_tag "gender_male", :id => "switch_style" %>
+    	<%= stylesheet_link_tag "Miehet", :id => "switch_style" %>
     <% end %>
     
     <!--fix this -->
@@ -20,22 +20,20 @@
   <body>
     <div class="container">
     	<a class="signup_button round" href="/signup">Sign up now!</a>
-    	<%= link_to logo, root_path %>
+    	<%= link_to logo, root_path, :id => "logo" %>
 	
       <ul id="gender_tab">
-		    <li id="gender_male" class="trans_bg 
+		    <li id="Miehet" class="trans_bg 
 		    	<% if cookies.signed[:gender] && cookies.signed[:gender] == "Miehet" %> 
   						selected
     			<% end %>
-    			">
-    			<%= link_to "Miehet", "/gender/Miehet", :remote => true %>
+    			">Miehet
     		</li> 
-		    <li id="gender_female" class="trans_bg
+		    <li id="Naiset" class="trans_bg
 		    	<% if cookies.signed[:gender] && cookies.signed[:gender] == "Naiset" %> 
   						selected
     			<% end %>		    	
-			    ">
-			    <%= link_to "Naiset", "/gender/Naiset", :remote => true %>
+			    ">Naiset
 		    </li> 
 		  </ul> 
       

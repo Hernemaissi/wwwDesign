@@ -27,7 +27,7 @@ body {
 	color: black;
 }
 
-#gender_tab :hover{
+nav li :hover, #gender_tab :hover{
 	background: rgb(80, 80, 80);
 	color: black;
 	text-decoration: underline;
@@ -80,4 +80,3 @@ nav ul li a:visited {
 td.sidebar {
   background: #ffc;
 }
-
