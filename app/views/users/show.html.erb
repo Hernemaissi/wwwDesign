@@ -16,11 +16,12 @@
     <td class="sidebar round">
       <strong>Nimi</strong> <%= @user.name %><br />
       <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
-      <% if current_user?(@user) %>
-        <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
-        <strong>Tiedotteet</strong> <%= @user.notifications %><br />
-      <% end %>
-      
+      <strong>Tiedotteet</strong> <%= @user.notifications %><br />
+     	<div id="new_ad_button">
+     		<% if current_user?(@user) %>
+      		  <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
+     		<% end %>
+     	</div>
     </td>
 
     </td>

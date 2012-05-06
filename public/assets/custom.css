@@ -1,6 +1,6 @@
 
 .container {
-  width: 800px;
+  width: 900px;
 }
 
 header {
@@ -14,7 +14,8 @@ section {
   margin-top: 1em;
   font-size: 120%;
   padding: 10px;
-  height: 1000px;
+  height: auto;
+  overflow: auto;
 }
 
 section h1 {
@@ -59,7 +60,7 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0.5em 1.8em;
+  padding: 0.5em 1.8em 0.6em 1.8em;
   font-weight: bold;
 }
 
@@ -75,8 +76,6 @@ a.signup_button {
   display: block;
   text-align: center;
   width: 190px;
-  color: #fff;
-  background: #999999;
   font-size: 150%;
   font-weight: bold;
   padding: 10px;
@@ -91,7 +90,7 @@ a.signup_button {
 #ad_pictures {
 	width: 100px;
     padding: 10px;
-    margin: 0px 0px 10px 5px;
+    margin: 0px 5px 15px 5px;
     float: left;
     text-align:center;
     -moz-border-radius:    2px;
@@ -107,7 +106,7 @@ img.large{
 }
 
 #ads{
-	width: 550px;
+	width: 650px;
     padding: 10px;
     margin: 10px;
     float: right;
@@ -119,9 +118,9 @@ img.large{
 
 .Category_name{
 	height: 20px;
-	width: 520px;
+	width: 630px;
 	padding: 5px;
-	margin: 10px;
+	margin: 5px;
 	clear: both;
 	-moz-border-radius:    2px;
     -webkit-border-radius: 2px;
@@ -179,9 +178,18 @@ td.main {
 }
 
 td.sidebar {
-  width: 30%;
+  width: 30px;
+  height: auto;
   padding: 1em;
   vertical-align: top;
+}
+
+#new_ad_button{
+  text-align: center;
+  width: 95%;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 5px;
 }
 
 .profile img.gravatar {

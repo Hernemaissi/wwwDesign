@@ -83,14 +83,20 @@ nav ul li a:visited {
 }
 
 td.sidebar {
-  background: #222;
+  	background: #CCCCCC;
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(80, 80, 80);
+	/* RGBa with 0.6 opacity */
+	background: rgba(80, 80, 80, 0.4);
 }
 
 a.signup_button {
   background: #529214;
-
 }
 
+#new_ad_button{
+  background: #529214;
+}
 
 #error_explanation {
   background-color: #141414;
