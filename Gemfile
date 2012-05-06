@@ -11,8 +11,6 @@ gem "bcrypt-ruby"
 
 gem 'execjs'
 
-gem 'therubyracer'
-
 group :development do
   gem 'rspec-rails', '2.6.1'
 end

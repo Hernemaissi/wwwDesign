@@ -1,40 +1,42 @@
+<%# encoding: utf-8 %>
+
 <%= form_for @ad do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :Otsikko %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :Kuvaus %><br />
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
+    <%= f.label :Kuvan_osoite %><br />
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :Hinta %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :size %><br />
+    <%= f.label :Koko %><br />
     <%= f.text_field :size %>
   </div>
   <div class="field">
-    <%= f.label :color %><br />
+    <%= f.label :Väri %><br />
     <%= select("ad", "color", WwwDesign::Application::COLORS, { :include_blank => true }) %>
   </div>
   <div class="field">
-    <%= f.label :material %><br />
+    <%= f.label :Materiaali %><br />
     <%= f.text_field :material %>
   </div>
   <div class="field">
-    <%= f.label :condition %><br />
+    <%= f.label :Kunto %><br />
    	<%= select("ad", "condition", WwwDesign::Application::CONDITIONS, { :include_blank => true }) %>
   </div>
   
   <div class="field">
-  	<%= f.label :category_id %><br />
+  	<%= f.label :Kategoria %><br />
   	<div style="display: none">
   		<%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => true} %>
 		</div>
@@ -78,7 +80,7 @@
  
   </div>
   <div class="actions">
-    <%= f.submit "Post ad" %>
+    <%= f.submit "Laita Vuokralle" %>
   </div>
   
 
