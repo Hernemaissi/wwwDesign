@@ -19,8 +19,14 @@
   </head>
   <body>
     <div class="container">
-    	<a class="signup_button round" href="/signup">Kirjaudu sisään!</a>
     	<%= link_to logo, root_path, :id => "logo" %>
+    	
+    	<% unless signed_in? %>
+    		<div class="login_section">    	
+    		<a class="signin_button round" href="/signin">Kirjaudu sisään!</a>		
+					<p>Uusi käyttäjä? <strong><%= link_to "Rekisteröidy!", signup_path %></strong></p>
+			</div>
+		<% end %>
 	
       <ul id="gender_tab">
 		    <li id="Miehet" class="trans_bg 

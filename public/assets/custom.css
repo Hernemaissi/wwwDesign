@@ -60,7 +60,7 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0.5em 1.8em 0.6em 1.8em;
+  padding: 0.6em 1.8em 0.6em 1.8em;
   font-weight: bold;
 }
 
@@ -70,7 +70,7 @@ nav ul li a:hover {
 
 /* Sign up button */
 
-a.signup_button {
+a.signin_button {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -79,11 +79,16 @@ a.signup_button {
   font-size: 150%;
   font-weight: bold;
   padding: 10px;
-  
-  position:relative;
-  right: -300px;
-  top: 60px;
+
 }
+
+div.login_section{
+  float: right;
+  position:relative;
+  text-align: center;
+  top: 30px;
+}
+
 
 /* Front page pictures */
 
@@ -99,10 +104,8 @@ a.signup_button {
 }
 
 img.large{
-	vertical-align: middle;
-	display: block;
-	margin-left: auto;
-    margin-right: auto
+	position:fixed;
+	right:20px;
 }
 
 #ads{
