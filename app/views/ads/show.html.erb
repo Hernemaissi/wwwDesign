@@ -54,7 +54,16 @@
     </div>
   <% end %>
   <br />
-  <div id="request_button">
-    <%= link_to "Edit Request", @ad,  :remote => true %>
-  </div>
-  <%= render 'show_requests' if current_user?(@ad.user) %>
+  <% if signed_in? %>
+    <% unless current_user?(@ad.user) %>
+      <% unless current_user.requested?(@ad.id) %>
+        <div id="request_button">
+          <%= link_to "Pyydä vuokralle", @ad,  :remote => true %>
+      </div>
+      <% else %>
+        Olet ilmoittanut olevasi kiinnostunut tästä ilmoituksesta.
+        <%= render 'unrequest' %>
+      <% end %>
+    <% end %>
+    <%= render 'show_requests' if current_user?(@ad.user) %>
+  <% end %>

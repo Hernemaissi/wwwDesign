@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(:version => 20120420114805) do
   create_table "ads", :force => true do |t|
     t.string   "description"
     t.string   "image_url"
-    t.decimal  "price"
     t.boolean  "available",   :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "user_id"
     t.string   "title"
     t.string   "color"
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20120420114805) do
     t.string   "size"
     t.string   "material"
     t.integer  "category_id"
+    t.decimal  "price"
   end
 
   add_index "ads", ["category_id"], :name => "index_ads_on_category_id"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20120420114805) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "ancestry"
     t.integer  "ad_id"
   end
@@ -54,15 +54,15 @@ ActiveRecord::Schema.define(:version => 20120420114805) do
 
   create_table "parts", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "requests", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "ad_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.date     "start_date"
     t.date     "end_date"
   end
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20120420114805) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "password_digest"
     t.string   "salt"
     t.boolean  "admin",                  :default => false

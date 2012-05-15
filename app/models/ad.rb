@@ -19,12 +19,6 @@ class Ad < ActiveRecord::Base
   
   scope :available, :conditions => {:available => true}
 
-  #scope :with_part, lambda { |part_id| { :joins => :parts, 
-  #                                           :conditions => {:parts => {:id => part_id} } } }
-
-  
-
-  
   def self.price_lower(price)
     where("price < ?", price)
   end
@@ -38,11 +32,11 @@ class Ad < ActiveRecord::Base
   end
   
   def self.in_categories(ids)
-     joins(:category).where("category_id IN (?)", ids)
+    joins(:category).where("category_id IN (?)", ids)
   end
 
-  def self.with_parts(ids)
-     joins(:parts).where("part_id = ?", ids)
+  def self.with_parts(part_ids)
+    joins(:parts).group("ads.id").select("ads.*").where("parts.id in (?)", part_ids).having("count(*)=#{part_ids.size}")
   end
 
   def self.in_condition(condition)

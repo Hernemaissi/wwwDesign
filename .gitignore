@@ -5,3 +5,5 @@ tmp/
 .sass-cache/
 .projectGemfile.lock
 Gemfile.lock
+Gemfile
+config/database.yml
