@@ -12,16 +12,17 @@
   naiset    = Category.create("name" => "Naiset")
   miehet    = Category.create("name" => "Miehet")
   
-  smokki = miehet.children.create("name" => "Smokki")
-  tummapuku = miehet.children.create("name" => "Tumma puku")
+  bonjourpuku = miehet.children.create("name" => "Bonjour-puku")
   frakki = miehet.children.create("name" => "Frakki")
   saketti = miehet.children.create("name" => "Saketti")
+  smokki = miehet.children.create("name" => "Smokki")
+  tummapuku = miehet.children.create("name" => "Tumma puku")
   kengät = miehet.children.create("name" => "Kengät")
   
 
   naiset1 = naiset.children.create("name" => "Iltapuku")
-  naiset2 = naiset.children.create("name" => "Hääpuku")
   naiset3 = naiset.children.create("name" => "Juhlamekko")
+  naiset2 = naiset.children.create("name" => "Morsiuspuku")
   naiset4 = naiset.children.create("name" => "Kengät")
   
   parts = Part.create([
