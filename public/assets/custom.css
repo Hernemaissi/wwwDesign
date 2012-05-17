@@ -13,7 +13,7 @@ header img {
 section {
   margin-top: 1em;
   font-size: 120%;
-  padding: 10px;
+  padding: 1%;
   height: auto;
   overflow: auto;
 }
@@ -42,7 +42,6 @@ section h1 {
 	border-top-right-radius: 4px;
 }
 
-
 nav {
   padding: 0 0.7em;
   white-space: nowrap;
@@ -60,7 +59,7 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0.6em 1.8em 0.6em 1.8em;
+  padding: 0.65em 1.8em 0.65em 1.8em;
   font-weight: bold;
 }
 
@@ -68,7 +67,7 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Sign up button */
+/* Sign up */
 
 a.signin_button {
   margin-left: auto;
@@ -89,29 +88,23 @@ div.login_section{
   top: 30px;
 }
 
+/* Front page */
 
-/* Front page pictures */
-
-#ad_pictures {
-	width: 100px;
-    padding: 10px;
-    margin: 0px 5px 15px 5px;
+#category_sidebar{
+	width: 16%;
+    padding: 1%;
+    margin: 1%;
     float: left;
-    text-align:center;
     -moz-border-radius:    2px;
     -webkit-border-radius: 2px;
     border-radius:         2px;
-}
-
-img.large{
-	position:fixed;
-	right:20px;
+    overflow:   auto;
 }
 
 #ads{
-	width: 650px;
-    padding: 10px;
-    margin: 10px;
+	width: 76%;
+    padding: 1%;
+    margin: 1%;
     float: right;
     -moz-border-radius:    2px;
     -webkit-border-radius: 2px;
@@ -119,36 +112,127 @@ img.large{
     overflow:   auto;	
 }
 
-.Category_name{
-	height: 20px;
-	width: 630px;
-	padding: 5px;
-	margin: 5px;
-	clear: both;
+#ads_for_single_category{
+	width: 96%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    clear: both;
+}
+
+#ads_for_single_category a{
+	display: block;	
+}
+
+#ads_for_single_category :hover{
+  	text-decoration: underline;
+}
+
+#ad_pictures {
+	width: 100px;
+	height: 135px;
+    padding: 1%;
+    margin: 1.5% 1.2% 1% 1.2%;
+    float: left;
+    text-align:center;
+    font-size: 90%;
+    vertical-align: top;
+    position: relative;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+}
+
+#img_rented{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1;
+	
+}
+
+/* User profile page */
+
+td.main {
+	width: 100%;
+    
+}
+
+#requests_field{
+	width: 76%;
+	padding: 1%;
+	margin: 1%;
+    float: left;	
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    overflow:   auto;	
+}
+
+#sent_requests, #received_requests{
+	width: 96%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
 	-moz-border-radius:    2px;
     -webkit-border-radius: 2px;
     border-radius:         2px;
 }
 
-.Category_name a{
-	display: block;	
+#sent_request, #received_request{
+	width: 96%;
+	padding: 1%;
+    margin: 1%;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
 }
 
-.Category_name :hover{
-  	text-decoration: underline;
-}
-
-#category_sidebar{
-	width: 160px;
-	max-height: 960px;
-    padding: 5px;
-    margin: 10px;
-    float: left;
+#sidebar {
+	width: 16%;
+	height: auto;
+    padding: 1%;
+    margin: 1%;
     -moz-border-radius:    2px;
     -webkit-border-radius: 2px;
     border-radius:         2px;
-    overflow:   auto;
+    float: right;
+    vertical-align: top;
+
 }
+
+#new_ad_button{
+  text-align: center;
+  margin: 10px;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 5px;
+}
+
+/* Ad info page*/
+
+#show_picture{
+	max-height: 300px;
+	width: 50%;
+	margin: 1%;
+	float: left;
+}
+
+#show_info{
+	width: 35%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+	float: left;
+}
+
+
 
 /* Round corners */
 
@@ -157,6 +241,8 @@ img.large{
   -webkit-border-radius: 2px;
   border-radius:         2px;
 }
+
+
 
 footer {
   text-align: center;
@@ -173,26 +259,6 @@ footer nav {
 table.profile {
   width: 100%;
   margin-bottom: 0;
-}
-
-td.main {
-  width: 70%;
-  padding: 1em;
-}
-
-td.sidebar {
-  width: 30px;
-  height: auto;
-  padding: 1em;
-  vertical-align: top;
-}
-
-#new_ad_button{
-  text-align: center;
-  width: 95%;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 5px;
 }
 
 .profile img.gravatar {

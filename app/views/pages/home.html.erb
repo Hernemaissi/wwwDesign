@@ -1,16 +1,16 @@
 
 <div id="ads">
 <% @categories.each do |c| %>
-  <% unless c.is_root? %>
-    <div class= "ads_for_single_category">
-      <div class="Category_name">
-        <%= link_to c.name, c, :remote => true %>
-      </div>
-      <% c.ads.take(5).each do |ad| %>
-        <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
-      <% end %>
-    </div>
-  <% end %>
+  <div id= "ads_for_single_category">
+  	  <% unless c.is_root? %>
+	      <div class="Category_name">
+	        <%= link_to c.name, c, :remote => true %>
+	      <% c.ads.take(5).each do |ad| %>
+	        <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+	      <% end %>
+	      </div>
+	  <% end %>
+  </div>
 <% end %>
 </div>
 
@@ -20,4 +20,3 @@
 	<h2>Kategoriat</h2>
 <%= render "categories/sidebar" %>
 </div>
-

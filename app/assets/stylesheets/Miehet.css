@@ -13,6 +13,8 @@ h1, h2, h3 {
 	background: rgba(0, 0, 0, 0.6);
 }
 
+/* Navigation */
+
 #gender_tab li {
 	background: #CCCCCC;
 	  /* Fallback for web browsers that doesn't support RGBa */
@@ -35,14 +37,16 @@ nav li :hover, #gender_tab :hover{
 	text-decoration: underline;
 }
 
-#ad_pictures {
+/*Pages*/
+
+#ad_pictures, #sent_request, #received_request {
     background: #222222;
-    background: rgb(0, 0, 0);
+    background: rgb(50, 50, 50);
  	/* RGBa with 0.6 opacity */
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(50, 50, 50, 0.4);
 }
 
-#ads{ 
+#ads, #requests_field, #category_sidebar, #sidebar, #show_info{ 
     background: #CCCCCC;
 	  /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(80, 80, 80);
@@ -50,16 +54,18 @@ nav li :hover, #gender_tab :hover{
 	background: rgba(80, 80, 80, 0.4);
 }
 
-#category_sidebar{
- 	background: #CCCCCC;
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
-	/* RGBa with 0.6 opacity */
-	background: rgba(80, 80, 80, 0.4);
+#ads_for_single_category, #sent_requests, #received_requests{
+	background: black;
 }
 
-.Category_name{
-	background: black;
+/* Buttons */
+
+a.signin_button {
+  background: #529214;
+}
+
+#new_ad_button{
+  background: #529214;
 }
 
 /* Links */
@@ -80,22 +86,6 @@ a:visited {
 
 nav ul li a:visited {
   color: white;
-}
-
-td.sidebar {
-  	background: #CCCCCC;
-	/* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
-	/* RGBa with 0.6 opacity */
-	background: rgba(80, 80, 80, 0.4);
-}
-
-a.signin_button {
-  background: #529214;
-}
-
-#new_ad_button{
-  background: #529214;
 }
 
 #error_explanation {

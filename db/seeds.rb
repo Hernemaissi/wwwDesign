@@ -26,13 +26,13 @@
   naiset4 = naiset.children.create("name" => "Kengät")
   
   parts = Part.create([
-    { name: 'Takki', categories: [smokki, tummapuku, frakki, saketti]}, 
-    { name: 'Housut', categories: [smokki, tummapuku, frakki, saketti] }, 
-    { name: 'Liivi', categories: [smokki, tummapuku, frakki, saketti]}, 
-    { name: 'Paita', categories: [smokki, tummapuku, frakki, saketti]}, 
+    { name: 'Takki', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
+    { name: 'Housut', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku] }, 
+    { name: 'Liivi', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
+    { name: 'Paita', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
     { name: 'Solmio', categories: [smokki, tummapuku, saketti]}, 
-    { name: 'Kalvosinnapit', categories: [smokki, tummapuku, frakki, saketti]}, 
-    { name: 'Plastron', categories: [tummapuku, frakki, saketti]}, 
+    { name: 'Kalvosinnapit', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
+    { name: 'Plastron', categories: [tummapuku, frakki, saketti, bonjourpuku]}, 
     { name: 'Rinnusnapit', categories: [frakki]}, 
     { name: 'Vyö', categories: [smokki, frakki]}])
   

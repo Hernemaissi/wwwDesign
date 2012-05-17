@@ -12,6 +12,6 @@
   	<%= f.select :part_ids, Part.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
 	</div>
   <div class="actions">
-    <%= f.submit "Save Category" %>
+    <%= f.submit "Tallenna kategoria" %>
   </div>
 <% end %>

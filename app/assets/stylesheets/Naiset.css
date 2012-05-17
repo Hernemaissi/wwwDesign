@@ -2,7 +2,6 @@ body {
   background-image:url('wp_white.gif');
 }
 
-
 .trans_bg {
 	  /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(100, 40, 40);
@@ -10,6 +9,8 @@ body {
 	background: rgba(100,40,40, 0.6);
 
 }
+
+/* Navigation */
 
 #gender_tab li {
 	background: #FF9999;
@@ -35,27 +36,32 @@ nav li :hover, #gender_tab :hover{
 	text-decoration: underline;
 }
 
-#ad_pictures {
+/*Pages*/
+
+#ad_pictures, #sent_request, #received_request {
    	background: rgb(100, 40, 40);
 	/* RGBa with 0.6 opacity */
 	background: rgba(100,40,40, 0.5);
 }
 
-#ads{
+#ads, #requests_field, #category_sidebar, #sidebar, #show_info{
     background: rgb(100, 20, 20);
 	/* RGBa with 0.6 opacity */
 	background: rgba(100,20,20, 0.3);
 }
 
-
-#category_sidebar{
- 	background: rgb(100, 20, 20);
-	/* RGBa with 0.6 opacity */
-	background: rgba(100,20,20, 0.3);
+#ads_for_single_category, #sent_requests, #received_requests{
+	background: white;
 }
 
-.Category_name{
-	background: white;
+/* Sign up */
+
+a.signin_button {
+  background: #CC0000;
+}
+
+#new_ad_button{
+  background: #CC0000;
 }
 
 /* Links */
@@ -76,19 +82,4 @@ a:visited {
 
 nav ul li a:visited {
   color: black;
-}
-
-
-td.sidebar {
-	background: rgb(100, 20, 20);
-	/* RGBa with 0.6 opacity */
-	background: rgba(100,20,20, 0.3);
-}
-
-#new_ad_button{
-  background: #CC0000;
-}
-
-a.signin_button {
-  background: #CC0000;
 }

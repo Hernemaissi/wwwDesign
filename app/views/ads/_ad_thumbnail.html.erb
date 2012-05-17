@@ -4,6 +4,18 @@
 	<a class="small" href="/ads/<%=ad.id%>/" title="small image"><img src="<%=ad.image_url %>" title="small image" width="100" height="100" />
 	<img class="large" src="<%=ad.image_url %>" title="large image" /></a>
 </div>
-Vuokra: <%=number_to_currency(ad.price, :unit => "€")%>
-</div>
 
+<% unless ad.available? %>
+<div id="img_rented">
+	<div id="big_img_rented">
+		<img src="../assets/images/vuokrassa.png" width="430" height="430"/>
+	</div>
+	<div id="small_img_rented">
+    	<%= link_to image_tag("vuokrassa.png", :border=>0, :size => "120x120")%>
+	</div>
+</div>
+<% end %>
+
+Vuokra: <%=number_to_currency(ad.price, :unit => "€")%>
+
+</div>
