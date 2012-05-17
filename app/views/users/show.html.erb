@@ -5,22 +5,37 @@
         <%= @user.name %>
       </h1>
       <% if current_user?(@user) %>
-        <% @user.ads.each do |ad| %>
-        <div id="user_ad">
-         <img src="<%=ad.image_url %>" title="ad"  width="100" height="100" />
-         <%= link_to "Vuokrauspyynnöt: #{ad.requests.count}", ad %>
-         <%= link_to "Muokkaa", edit_ad_path(ad) %>
+        <div id="sent_requests">
+        Lähetetyt ehdotukset:
+        <% @user.requests.each do |request| %>
+          <div id="sent_request">
+            Olet kiinnostunut ilmoituksesta <%= link_to request.ad.title, request.ad %> Ilmoituksen omistaja: <%= request.ad.user.name %> <br />
+            Ota yhteyttä: <%= request.ad.user.email %>
+          </div>
         <% end %>
+        </div>
+        <div id="received_requests">
+        Vastaanotetut ehdotukset:
+        <% @user.ads.each do |ad| %>
+          <% ad.requests.each do |request| %>
+            <div id="sent_request">
+              <%= request.sender.name %> on kiinnostunut ilmoituksestasi <%= link_to request.ad.title, request.ad %><br />
+              Ota yhteyttä: <%= request.sender.email %>
+            </div>
+          <% end %>
+        <% end %>
+        </div>
       <% end %>
     </td>
     <td class="sidebar round">
       <strong>Nimi</strong> <%= @user.name %><br />
       <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
-      <% if current_user?(@user) %>
-        <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
-        <strong>Tiedotteet</strong> <%= @user.notifications %><br />
-      <% end %>
-      
+      <strong>Tiedotteet</strong> <%= @user.notifications %><br />
+     	<div id="new_ad_button">
+     		<% if current_user?(@user) %>
+      		  <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
+     		<% end %>
+     	</div>
     </td>
 
     </td>

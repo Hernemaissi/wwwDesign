@@ -5,17 +5,18 @@ gem 'rails', '3.2.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem "pg"
 
 gem "bcrypt-ruby"
+
+gem 'execjs'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
 end
 
-gem 'annotate', 
-    :git => 'git://github.com/jeremyolliver/annotate_models.git', 
-    :branch => 'rake_compatibility'
+gem 'annotate', '2.4.0'
 
 group :test do
   gem 'rspec-rails', '2.6.1'
@@ -30,6 +31,11 @@ group :assets do
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', '>=1.0.3'
 end
+
+#group :production do
+#  gem "pg"
+#end
+
 
 gem 'jquery-rails', '>= 1.0.12'
 

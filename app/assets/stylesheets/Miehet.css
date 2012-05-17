@@ -14,12 +14,12 @@ h1, h2, h3 {
 }
 
 #gender_tab li {
-	background: #141414;
+	background: #CCCCCC;
 	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(20, 20, 20);
+	background: rgb(80, 80, 80);
 	/* RGBa with 0.6 opacity */
-	background: rgba(20, 20, 20, 0.5);
-		color: 	#C2C2C2;
+	background: rgba(80, 80, 80, 0.5);
+	color: 	white;
 }
 
 #gender_tab .selected {
@@ -35,7 +35,32 @@ nav li :hover, #gender_tab :hover{
 	text-decoration: underline;
 }
 
+#ad_pictures {
+    background: #222222;
+    background: rgb(0, 0, 0);
+ 	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.4);
+}
 
+#ads{ 
+    background: #CCCCCC;
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(80, 80, 80);
+	/* RGBa with 0.6 opacity */
+	background: rgba(80, 80, 80, 0.4);
+}
+
+#category_sidebar{
+ 	background: #CCCCCC;
+	  /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(80, 80, 80);
+	/* RGBa with 0.6 opacity */
+	background: rgba(80, 80, 80, 0.4);
+}
+
+.Category_name{
+	background: black;
+}
 
 /* Links */
 
@@ -58,9 +83,20 @@ nav ul li a:visited {
 }
 
 td.sidebar {
-  background: #222;
+  	background: #CCCCCC;
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(80, 80, 80);
+	/* RGBa with 0.6 opacity */
+	background: rgba(80, 80, 80, 0.4);
 }
 
+a.signin_button {
+  background: #529214;
+}
+
+#new_ad_button{
+  background: #529214;
+}
 
 #error_explanation {
   background-color: #141414;
