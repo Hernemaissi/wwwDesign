@@ -10,7 +10,8 @@ class SearchController < ApplicationController
       @current_gender = "Miehet"
     end
     @category = Category
-    @results = Ad.find_ads_by_categories(@categories).available(true).paginate :page => params[:page], :per_page => 3 
+    @results = []
+    #= Ad.find_ads_by_categories(@categories).available(true).paginate :page => params[:page], :per_page => 3 
   end
 
   def filter_category

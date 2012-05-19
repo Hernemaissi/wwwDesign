@@ -58,6 +58,8 @@ function filterResults() {
 
 
 $(function() {
+	filterResults();
+	
 	/* pagination for search results */ 
     $('.pagination a').live("click", function () {  
         $.ajax({
