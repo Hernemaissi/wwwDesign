@@ -17,7 +17,7 @@ function filterResults() {
 	$("#categories .selected").each(function() {
         categories.push($(this).attr('id'));
     }); 
-	if(categories.length === 0){
+	if(categories[0] === "0"){
 		$("#categories a").each(function(){
 			categories.push(this.id);
 		});
