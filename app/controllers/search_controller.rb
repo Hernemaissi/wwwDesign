@@ -10,7 +10,7 @@ class SearchController < ApplicationController
       @current_gender = "Miehet"
     end
     @category = Category
-    @results = Ad.in_categories(@categories).available(true).paginate :page => params[:page], :per_page => 3 
+    @results = Ad.find_ads_by_categories(@categories).available(true).paginate :page => params[:page], :per_page => 3 
   end
 
   def filter_category
@@ -38,7 +38,7 @@ class SearchController < ApplicationController
     
     @categories = Category.find_all_by_id(params[:categories])
 
-    @results = Ad.in_categories(params[:categories])
+    @results = Ad.find_ads_by_categories(params[:categories])
     
     
     if(params[:available] == "true")
@@ -62,7 +62,7 @@ class SearchController < ApplicationController
     end
    
     if (!params[:parts].nil?)
-      @results = @results.with_parts(params[:parts])
+      @results = @results.find_ads_by_parts(params[:parts])
     end
    
     @results = @results.paginate :page => params[:page], :per_page => 3 

@@ -1,16 +1,5 @@
 <h1>Ads</h1>
 
-<!---<%= form_tag ads_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :title => nil %>
-  </p>
-<% end %>--->
-
-
-
-
-
 <% @ads.each do |ad| %>
   Vuokra: <%=ad.price%>
   <div class="picture">
@@ -18,3 +7,4 @@
   <img class="large" src="<%=ad.image_url %>" title="large image" /></a>
   </div>
 <%end%>
+
