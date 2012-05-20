@@ -3,7 +3,7 @@
 <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :name, "Nimi" %><br />
+    <%= f.label :name, "Käyttäjänimi" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
