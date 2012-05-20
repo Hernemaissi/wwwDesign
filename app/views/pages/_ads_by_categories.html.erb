@@ -1,0 +1,13 @@
+
+<% @categories.each do |c| %>
+  <div id= "ads_for_single_category">
+  	  <% unless c.is_root? %>
+	      <div class="Category_name">
+	        <%= link_to c.name, c, :remote => true %>
+	      <% c.ads.available(true).take(5).each do |ad| %>
+	        <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+	      <% end %>
+	      </div>
+	  <% end %>
+  </div>
+<% end %>

@@ -10,15 +10,20 @@
 
 
 $(function() {
-	//make the whole gender tab li clickable
+    
+/* change stylesheets and update content when gender tab changes */
 	$("#gender_tab li").click(function(){
 		if(!$(this).hasClass("selected")){
 			var id = $(this).attr("id");
-			$("#switch_style").attr("href", "/assets/" + id + ".css");
+
 			$("#gender_tab li").each(function(){
 				$(this).toggleClass('selected');
 			});
+			
+			//update content
+			$.ajax({
+			url: "/gender/" + id + "/",
+			dataType: 'script'});
 		}
 	});
-
 })

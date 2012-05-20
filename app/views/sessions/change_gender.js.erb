@@ -3,13 +3,14 @@ $("#logo").html("<%= escape_javascript(link_to logo, root_path, :id => "logo") %
 
 //if on Home page
 if ($('#category_sidebar').length != 0){
-	$("#ads").empty();
-	<% @categories.each do |c| %>
-		$("#ads").append("<%= escape_javascript(render :partial => 'categories/categoryads', :locals => {:c => c}) %>");
-	<% end %>
+
+	$("#ads").html("<%= escape_javascript(render :partial => 'pages/ads_by_categories', :locals => {:categories => @categories}) %>");
 	
 	$("#category_sidebar").html("<%= escape_javascript(render :partial => 'categories/sidebar') %>");
 }
+
+
+
 
 //if on search page
 if ($('#searchfilter').length != 0){
@@ -17,8 +18,6 @@ if ($('#searchfilter').length != 0){
 	filterResults();
 }
 
+
 //switch stylesheets
-$.ajax({
-	url: "/gender/" + <%= escape_javascript(@current_gender) %> + "/",
-	dataType: 'script'});
-}
+$("#switch_style").attr("href", "/assets/" + "<%= escape_javascript(@current_gender) %>" + ".css");
