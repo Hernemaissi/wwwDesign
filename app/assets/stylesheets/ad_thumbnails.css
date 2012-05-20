@@ -1,0 +1,81 @@
+.picture {
+  /*width:100px; height: 250px; background-color:#ffffff;*/
+}
+.picture a.small, .picture a.small:visited { 
+  display:block; width:100px; height:100px; text-decoration:none; background:#ffffff; top:0; left:0; border:0;
+}
+.picture a img {
+  border:0;
+}
+
+.picture a.small:hover {
+  text-decoration:none; 
+  background-color:#000000; 
+  color:#000000;
+}
+
+.picture a .large {
+  display:block; position:absolute; width:0; height:0; border:0; top:0; left:0;
+}
+
+/*
+.picture a.small:hover .large {
+  display:block; position:absolute; top: 300px; left:800px; width:300px; height:300px; 
+} */
+
+
+
+#ads{
+	width: 76%;
+    padding: 1%;
+    margin: 1%;
+    float: right;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    overflow:   auto;	
+}
+
+#ads_for_single_category{
+	width: 96%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    clear: both;
+}
+
+#ads_for_single_category a{
+	display: block;	
+}
+
+/*
+#ads_for_single_category :hover{
+  	text-decoration: underline;
+}*/
+
+#ad_pictures {
+	width: 100px;
+	height: 135px;
+    padding: 1%;
+    margin: 1.5% 1.2% 1% 1.2%;
+    float: left;
+    text-align:center;
+    font-size: 90%;
+    vertical-align: top;
+    position: relative;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+}
+
+#img_rented{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1;
+	pointer-events: none;  /*mouseclick passes through overlaying div */
+}
+

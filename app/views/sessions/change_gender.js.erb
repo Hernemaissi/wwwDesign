@@ -16,3 +16,9 @@ if ($('#searchfilter').length != 0){
 	$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
 	filterResults();
 }
+
+//switch stylesheets
+$.ajax({
+	url: "/gender/" + <%= escape_javascript(@current_gender) %> + "/",
+	dataType: 'script'});
+}

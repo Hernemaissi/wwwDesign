@@ -1,4 +1,7 @@
-<% content_for :head, javascript_include_tag(:search) %>
+<% content_for :head do %>
+	<%= javascript_include_tag :search %>
+  <%= stylesheet_link_tag 'ad_thumbnails' %>
+<% end %>
 
 <div id="searchfilter">
 	<%= render "search/search_filter", :categories => @categories %>

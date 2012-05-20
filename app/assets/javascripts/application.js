@@ -8,9 +8,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 
+
 $(function() {
-    
-	/* change stylesheets and update content when gender tab changes */
+	//make the whole gender tab li clickable
 	$("#gender_tab li").click(function(){
 		if(!$(this).hasClass("selected")){
 			var id = $(this).attr("id");
@@ -18,11 +18,7 @@ $(function() {
 			$("#gender_tab li").each(function(){
 				$(this).toggleClass('selected');
 			});
-			
-			//update content
-	        $.ajax({
-	        	url: "/gender/" + id + "/",
-	            dataType: 'script'});
 		}
 	});
+
 })

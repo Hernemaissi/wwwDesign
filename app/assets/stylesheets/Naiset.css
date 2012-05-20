@@ -3,9 +3,6 @@ body {
 }
 
 .trans_bg {
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(100, 40, 40);
-	/* RGBa with 0.6 opacity */
 	background: rgba(100,40,40, 0.6);
 
 }
@@ -14,18 +11,12 @@ body {
 
 #gender_tab li {
 	background: #FF9999;
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(100, 40, 40);
-	/* RGBa with 0.6 opacity */
 	background: rgba(100,40,40, 0.3);
 	color: 	#303030;
 }
 
 #gender_tab .selected {
 		background: #FF9999;
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(100, 40, 40);
-	/* RGBa with 0.6 opacity */
 	background: rgba(100,40,40, 0.6);
 	color: black
 }
@@ -39,14 +30,11 @@ nav li :hover, #gender_tab :hover{
 /*Pages*/
 
 #ad_pictures, #sent_request, #received_request {
-   	background: rgb(100, 40, 40);
-	/* RGBa with 0.6 opacity */
 	background: rgba(100,40,40, 0.5);
 }
 
 #ads, #requests_field, #category_sidebar, #sidebar, #show_info{
-    background: rgb(100, 20, 20);
-	/* RGBa with 0.6 opacity */
+
 	background: rgba(100,20,20, 0.3);
 }
 

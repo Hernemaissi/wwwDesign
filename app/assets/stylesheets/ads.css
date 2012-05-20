@@ -1,0 +1,19 @@
+/* Ad info page*/
+
+#show_picture{
+	max-height: 300px;
+	width: 50%;
+	margin: 1%;
+	float: left;
+}
+
+#show_info{
+	width: 35%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+	float: left;
+}
