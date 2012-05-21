@@ -72,7 +72,7 @@
 	  <% if signed_in? %>
 	    <% unless current_user?(@ad.user) %>
 	      <% unless current_user.requested?(@ad.id) %>
-	        <div class="request_button round">
+	        <div id="request_button">
 	          <%= link_to "Pyydä vuokralle", @ad,  :remote => true %>
 	      </div>
 	      <% else %>
