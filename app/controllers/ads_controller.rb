@@ -10,8 +10,8 @@ class AdsController < ApplicationController
   
   
   def show
-    @title = "Temp title"
     @ad = Ad.find(params[:id])
+    @title = @ad.title
     respond_to do |format|
         format.html
         format.js
