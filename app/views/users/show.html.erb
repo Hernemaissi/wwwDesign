@@ -1,3 +1,6 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'ad_thumbnails' %>
+<% end %>
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
@@ -5,6 +8,12 @@
 		      <h1>
 		        <%= @user.name %>
 		      </h1>
+          <div class='own_ads'>
+          Omat ilmoitukset:</br>
+          <% @user.ads.each do |ad| %>
+             <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+          <% end %>
+        </div>
 		      <% if current_user?(@user) %>
 		        <div id="sent_requests">
 			    Lähetetyt ehdotukset:
