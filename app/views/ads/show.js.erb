@@ -1,1 +1,3 @@
+$("#request_button").hide();
 $("#request_button").html("<%= escape_javascript(render :partial => 'request_form') %>");
+$("#request_button").slideDown('slow', function() {});
