@@ -21,11 +21,11 @@
 </div>
 
 <div id="condition">
-	<%= select("filter", "condition", WwwDesign::Application::CONDITIONS, { :include_blank => true }) %>
+	Kunto: <%= select("filter", "condition", WwwDesign::Application::CONDITIONS, { :include_blank => true }) %>
 </div>
 
 <div id="color">
-	<%= select("filter", "color", WwwDesign::Application::COLORS, { :include_blank => true }) %>
+	Väri: <%= select("filter", "color", WwwDesign::Application::COLORS, { :include_blank => true }) %>
 </div>
 
 <button type="button">Hae</button> 

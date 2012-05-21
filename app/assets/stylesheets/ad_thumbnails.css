@@ -21,9 +21,9 @@
   text-decoration:none; 
   color:#000000;
   z-index: 2;
-  -webkit-transform:scale(2, 2);
-  -moz-transform:scale(2, 2);
-  -o-transform:scale(2, 2);
+  -webkit-transform:scale(1.7, 1.7);
+  -moz-transform:scale(1.7, 1.7);
+  -o-transform:scale(1.7, 1.7);
 }
 
 
@@ -97,9 +97,9 @@
 
 .img_rented a.small_img_rented:hover .picture a.small:hover{
   text-decoration:none; 
-  -webkit-transform:scale(2, 2);
-  -moz-transform:scale(2, 2);
-  -o-transform:scale(2, 2);
+  -webkit-transform:scale(1.7, 1.7);
+  -moz-transform:scale(1.7, 1.7);
+  -o-transform:scale(1.7, 1.7);
   z-index: 3;
   pointer-events: none;  /*mouseclick passes through overlaying div */
 }

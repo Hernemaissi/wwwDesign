@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class CategoriesController < ApplicationController
   before_filter :admin_only, :only => [:create, :destroy, :new, :edit, :update, :index]
   def index
@@ -17,7 +19,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(params[:category])
     if @category.save
-      flash[:success] = "New category posted"
+      flash[:success] = "Uusi kategoria luotu."
       redirect_to categories_url
     else
       @title = "Post new ad"
@@ -28,7 +30,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    flash[:notice] = "Successfully destroyed category."
+    flash[:notice] = "Kategoria poistettu."
     redirect_to categories_url
   end
 
@@ -39,7 +41,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
-      flash[:notice] = "Successfully updated category."
+      flash[:notice] = "Kategoria päivitetty."
       redirect_to @category
     else
       render :action => 'edit'
