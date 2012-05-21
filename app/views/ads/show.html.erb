@@ -1,7 +1,17 @@
   <div id="xhrflash"></div>
   
   <div id="show_picture">
-	 	 <img src="<%=@ad.image_url%>" alt="Ad" width="430" height="430"/><br />
+  		<div class="show_img">
+		 	 <img src="<%=@ad.image_url%>" alt="Ad" width="510" height="510"/><br />
+		</div>
+		
+	 	<% unless @ad.available? %>
+			<div class="show_img_rented">
+				<a class="show_small_img_rented"><img src="/assets/vuokrassa.png" alt="Vuokrassa" width="200" height="200"/>
+				</a>
+			</div>
+		<% end %>
+ 
   </div>
   <div id="show_info">
 	  <b>Nimi:</b> <%=@ad.title%><br />

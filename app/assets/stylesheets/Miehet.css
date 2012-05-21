@@ -36,7 +36,7 @@ nav li :hover, #gender_tab :hover{
 	background: rgba(20, 20, 20, 0.9);
 }
 
-#ads, #requests_field, #category_sidebar, #sidebar, #show_info{ 
+#ads, .requests_field, #category_sidebar, #sidebar, #show_info{ 
     background: #CCCCCC;
 	background: rgba(80, 80, 80, 0.4);
 }
