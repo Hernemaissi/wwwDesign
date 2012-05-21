@@ -19,7 +19,7 @@ class AdsController < ApplicationController
   def create
     @ad = current_user.ads.build(params[:ad])
     if @ad.save
-      flash[:success] = "New ad posted"
+      flash[:success] = "Uusi ilmoitus lisätty"
       redirect_to @ad
     else
       @title = "Post new ad"
