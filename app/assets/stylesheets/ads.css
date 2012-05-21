@@ -30,10 +30,20 @@
 	float: left;
 }
 
-.request_button{
+#request_button{
+	width: 90%;
 	text-align: center;
   	margin: 2%;
+  	padding: 2%;
   	font-size: 120%;
   	font-weight: bold;
-  	padding: 2%;	
+}
+
+#unreguest_button, #toggle, #edit_button{
+	width: 50%;
+	text-align: center;
+  	margin: 2%;
+  	padding: 2%;
+  	font-size: 120%;
+  	font-weight: bold;
 }

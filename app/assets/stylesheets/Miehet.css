@@ -47,16 +47,8 @@ nav li :hover, #gender_tab :hover{
 
 /* Buttons */
 
-a.signin_button {
+a.signin_button, .new_ad_button, #request_button, #unreguest_button, #toggle, #edit_button{
   background: #529214;
-}
-
-.new_ad_button{
-  background: #529214;
-}
-
-.request_button{
-	background: #529214;
 }
 
 /* Links */
