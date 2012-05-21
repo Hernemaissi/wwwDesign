@@ -8,11 +8,12 @@
   padding: 5px;
 }
 
-.sent_requests, .received_requests, .sent_request, .received_request{
+.sent_requests, .received_requests, .sent_request, .received_request, .own_ads{
 	width: 96%;
 	height: auto;
 	padding: 1%;
 	margin: 1%;
+	overflow:   auto;
 }
 
 .requests_field{

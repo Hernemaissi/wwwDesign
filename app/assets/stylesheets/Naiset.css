@@ -38,7 +38,7 @@ nav li :hover, #gender_tab :hover{
 	background: rgba(100,20,20, 0.3);
 }
 
-#ads_for_single_category, .sent_requests, .received_requests{
+#ads_for_single_category, .sent_requests, .received_requests, .own_ads{
 	background: white;
 }
 

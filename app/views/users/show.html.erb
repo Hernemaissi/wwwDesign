@@ -3,21 +3,25 @@
 <% end %>
 <table class="profile" summary="Profile information">
   <tr>
-    <td class="main">
-       <div class='own_ads'>
-          Omat ilmoitukset:</br>
-          <% @user.ads.each do |ad| %>
-             <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
-          <% end %>
-          </div>
+    <td class="main">     
+   		<h1>
+        <%= @user.name %>
+        </h1>
+        
     	<div class="requests_field round">
-		      <h1>
-		        <%= @user.name %>
-		      </h1>
+	
 		      <% if current_user?(@user) %>
+		      
+		       <div class='own_ads round'>
+         			Omat ilmoitukset:</br>
+         		 	<% @user.ads.each do |ad| %>
+             		<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+         	 		<% end %>
+        	   </div> 
+		      
 		        <div class="sent_requests round">
-			    Lähetetyt ehdotukset:
-			      <% @user.requests.each do |request| %>
+			    	Lähetetyt ehdotukset:
+			   	    <% @user.requests.each do |request| %>
 			        <div class="sent_request round">    	
 			            Olet kiinnostunut ilmoituksesta <%= link_to request.ad.title, request.ad %><br /> Ilmoituksen omistaja: <%= request.ad.user.name %> <br />
 			            Ota yhteyttä: <a href="mailto:<%= request.ad.user.email %> 
