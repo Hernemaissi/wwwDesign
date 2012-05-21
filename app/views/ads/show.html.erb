@@ -2,12 +2,13 @@
   
   <div id="show_picture">
   		<div class="show_img">
-		 	 <img src="<%=@ad.image_url%>" alt="Ad" width="510" height="510"/><br />
+		 	 <a href="<%=@ad.image_url%>"><img src="<%=@ad.image_url%>" alt="Ad" width="510" height="510" /></a>
+		 	 
 		</div>
 		
 	 	<% unless @ad.available? %>
 			<div class="show_img_rented">
-				<a class="show_small_img_rented"><img src="/assets/vuokrassa.png" alt="Vuokrassa" width="200" height="200"/>
+				<a class="show_small_img_rented"><img src="/assets/vuokrassa.png" alt="Vuokrassa" width="200" height="200" />
 				</a>
 			</div>
 		<% end %>

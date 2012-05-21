@@ -29,7 +29,7 @@ nav li :hover, #gender_tab :hover{
 
 /*Pages*/
 
-#ad_pictures, #sent_request, #received_request {
+.ad_pictures, .sent_request, .received_request {
 	background: rgba(100,40,40, 0.5);
 }
 
@@ -38,22 +38,22 @@ nav li :hover, #gender_tab :hover{
 	background: rgba(100,20,20, 0.3);
 }
 
-#ads_for_single_category, #sent_requests, #received_requests{
+#ads_for_single_category, .sent_requests, .received_requests{
 	background: white;
 }
 
 /* Sign up */
 
 a.signin_button {
-  background: #CC0000;
+  background: #FBC2C4;
 }
 
-#new_ad_button{
-  background: #CC0000;
+.new_ad_button{
+  background: #FBC2C4;
 }
 
 .request_button{
-	background: #CC0000;
+	background: #FBC2C4;
 }
 
 /* Links */

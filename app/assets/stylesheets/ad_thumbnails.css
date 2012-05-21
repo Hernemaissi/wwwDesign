@@ -10,6 +10,7 @@
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
+  z-index: 2;
 }
 
 .picture a img {
@@ -19,10 +20,10 @@
 .picture a.small:hover {
   text-decoration:none; 
   color:#000000;
+  z-index: 2;
   -webkit-transform:scale(2, 2);
   -moz-transform:scale(2, 2);
   -o-transform:scale(2, 2);
-  z-index: 2;
 }
 
 
@@ -57,7 +58,7 @@
   	text-decoration: underline;
 }*/
 
-#ad_pictures {
+.ad_pictures {
 	width: 100px;
 	height: 125px;
     padding: 1%;
