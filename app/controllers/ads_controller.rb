@@ -1,4 +1,5 @@
 # encoding: UTF-8
+
 class AdsController < ApplicationController
   before_filter :authenticate, :only => [:create, :destroy, :new, :edit, :update, :toggle_available]
 
