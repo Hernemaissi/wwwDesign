@@ -1,14 +1,26 @@
 /* Ad info page*/
 
 #show_picture{
-	max-height: 300px;
-	width: 50%;
+	width: 58%;
 	margin: 1%;
 	float: left;
+	position: relative;
+}
+
+.show_img{
+	display:block;
+}
+
+.show_img_rented{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1;
+	pointer-events: none;  /*mouseclick passes through overlaying div */
 }
 
 #show_info{
-	width: 35%;
+	width: 36%;
 	height: auto;
 	padding: 1%;
 	margin: 1%;
@@ -16,4 +28,12 @@
     -webkit-border-radius: 2px;
     border-radius:         2px;
 	float: left;
+}
+
+.request_button{
+	text-align: center;
+  	margin: 2%;
+  	font-size: 120%;
+  	font-weight: bold;
+  	padding: 2%;	
 }

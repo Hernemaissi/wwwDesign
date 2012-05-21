@@ -4,7 +4,7 @@
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
-    	<div id="requests_field">
+    	<div class="requests_field round">
 		      <h1>
 		        <%= @user.name %>
 		      </h1>
@@ -15,10 +15,10 @@
           <% end %>
         </div>
 		      <% if current_user?(@user) %>
-		        <div id="sent_requests">
+		        <div class="sent_requests round">
 			    Lähetetyt ehdotukset:
 			      <% @user.requests.each do |request| %>
-			        <div id="sent_request">    	
+			        <div class="sent_request round">    	
 			            Olet kiinnostunut ilmoituksesta <%= link_to request.ad.title, request.ad %><br /> Ilmoituksen omistaja: <%= request.ad.user.name %> <br />
 			            Ota yhteyttä: <a href="mailto:<%= request.ad.user.email %> 
 			            	?subject=Suit Up! 
@@ -30,11 +30,11 @@
 			        </div>
 			      <% end %>
 		        </div>
-		        <div id="received_requests">
+		        <div class="received_requests round">
 		        Vastaanotetut ehdotukset:
 		        <% @user.ads.each do |ad| %>
 		          <% ad.requests.each do |request| %>
-		            <div id="received_request">
+		            <div class="received_request round">
 		              <%= request.sender.name %> on kiinnostunut ilmoituksestasi <%= link_to request.ad.title, request.ad %><br />
 		              Ota yhteyttä: <a href="mailto:<%= request.sender.email %> 
 		              	?subject=Suit Up! 
@@ -53,9 +53,9 @@
 	      <strong>Nimi</strong> <%= @user.name %><br />
 	      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
 	      <strong>Tiedotteet</strong> <%= @user.notifications %><br />
-	     	<div id="new_ad_button">
+	     	<div class="new_ad_button round">
 	     		<% if current_user?(@user) %>
-	      		  <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
+	      		  <%= link_to "Lisää uusi ilmoitus", new_ad_path  %><br />
 	     		<% end %>
 	     	</div>
 	    </div>

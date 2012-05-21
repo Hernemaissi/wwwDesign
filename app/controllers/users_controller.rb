@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Tervetuloa!"
       redirect_to @user
     else
       @title = "Sign up"
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
   
   def update
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile updated."
+      flash[:success] = "Profiili päivitetty."
       redirect_to @user
     else
       @title = "Edit user"

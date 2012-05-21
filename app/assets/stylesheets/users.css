@@ -1,6 +1,6 @@
 /* User profile page */
 
-#new_ad_button{
+.new_ad_button{
   text-align: center;
   margin: 10px;
   font-size: 120%;
@@ -8,24 +8,17 @@
   padding: 5px;
 }
 
-
-#sent_request, #received_request{
+.sent_requests, .received_requests, .sent_request, .received_request{
 	width: 96%;
+	height: auto;
 	padding: 1%;
-    margin: 1%;
-	-moz-border-radius:    2px;
-    -webkit-border-radius: 2px;
-    border-radius:         2px;
+	margin: 1%;
 }
 
-
-#requests_field{
+.requests_field{
 	width: 76%;
 	padding: 1%;
 	margin: 1%;
     float: left;	
-    -moz-border-radius:    2px;
-    -webkit-border-radius: 2px;
-    border-radius:         2px;
     overflow:   auto;	
 }

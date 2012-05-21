@@ -33,7 +33,7 @@ nav li :hover, #gender_tab :hover{
 	background: rgba(100,40,40, 0.5);
 }
 
-#ads, #requests_field, #category_sidebar, #sidebar, #show_info{
+#ads, .requests_field, #category_sidebar, #sidebar, #show_info{
 
 	background: rgba(100,20,20, 0.3);
 }
@@ -50,6 +50,10 @@ a.signin_button {
 
 #new_ad_button{
   background: #CC0000;
+}
+
+.request_button{
+	background: #CC0000;
 }
 
 /* Links */

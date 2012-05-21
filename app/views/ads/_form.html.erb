@@ -4,7 +4,7 @@
 <%= form_for @ad do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :Otsikko %><br />
+    <%= f.label :Otsikko, :class => "required" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
@@ -12,15 +12,15 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :Kuvan_osoite %><br />
+    <%= f.label :Kuvan_osoite, :class => "required" %><br />
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :Hinta %><br />
+    <%= f.label :Hinta, "Hinta yhdelle vuokrauskerralle", :class => "required"  %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :Koko %><br />
+    <%= f.label :Koko, :class => "required" %><br />
     <%= f.text_field :size %>
   </div>
   <div class="field">
@@ -32,12 +32,12 @@
     <%= f.text_field :material %>
   </div>
   <div class="field">
-    <%= f.label :Kunto %><br />
+    <%= f.label :Kunto, :class => "required" %><br />
    	<%= select("ad", "condition", WwwDesign::Application::CONDITIONS, { :include_blank => true }) %>
   </div>
   
   <div class="field">
-  	<%= f.label :Kategoria %><br />
+  	<%= f.label :Kategoria, :class => "required" %><br />
   	<div style="display: none">
   		<%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => true} %>
 		</div>
