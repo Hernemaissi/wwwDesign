@@ -4,16 +4,16 @@
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
-    	<div class="requests_field round">
-		      <h1>
-		        <%= @user.name %>
-		      </h1>
-          <div class='own_ads'>
+       <div class='own_ads'>
           Omat ilmoitukset:</br>
           <% @user.ads.each do |ad| %>
              <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
           <% end %>
-        </div>
+          </div>
+    	<div class="requests_field round">
+		      <h1>
+		        <%= @user.name %>
+		      </h1>
 		      <% if current_user?(@user) %>
 		        <div class="sent_requests round">
 			    Lähetetyt ehdotukset:
