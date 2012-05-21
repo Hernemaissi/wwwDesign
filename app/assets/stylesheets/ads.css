@@ -1,7 +1,6 @@
 /* Ad info page*/
 
 #show_picture{
-	max-height: 300px;
 	width: 50%;
 	margin: 1%;
 	float: left;
@@ -16,4 +15,12 @@
     -webkit-border-radius: 2px;
     border-radius:         2px;
 	float: left;
+}
+
+.request_button{
+	text-align: center;
+  	margin: 2%;
+  	font-size: 120%;
+  	font-weight: bold;
+  	padding: 2%;	
 }

@@ -18,10 +18,12 @@
   display:block; position:absolute; width:0; height:0; border:0; top:0; left:0;
 }
 
-/*
 .picture a.small:hover .large {
-  display:block; position:absolute; top: 300px; left:800px; width:300px; height:300px; 
-} */
+  position:absolute;
+  z-index: 2; 
+  width:300px;
+  height:300px; 
+} 
 
 
 
