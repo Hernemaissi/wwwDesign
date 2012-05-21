@@ -36,7 +36,7 @@ class Ad < ActiveRecord::Base
   end
 
   def self.find_ads_by_parts(part_ids)
-    joins(:parts).group("ads.id").select("ads.*").where("parts.id in (?)", part_ids).having("count(*)=#{part_ids.size}")
+    joins(:parts).select("DISTINCT(ads.id), ads.*").where("parts.id in (?)", part_ids).having("count(*)=#{part_ids.size}")
   end
 
   def self.in_condition(condition)
