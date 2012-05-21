@@ -15,7 +15,7 @@
 		       <div class='own_ads round'>
          			Omat ilmoitukset:</br>
          		 	<% @user.ads.each do |ad| %>
-             		<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+             		<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad, :hover => false} %>
          	 		<% end %>
         	   </div> 
 		      

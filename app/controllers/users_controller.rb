@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   before_filter :logged_in,    :only => [:new, :create]
   
   def index
-    @title = "All users"
+    @title = "Kaikki käyttäjät"
     @users = User.all
   end
   
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
-    @title = "Sign Up"
+    @title = "Kirjaudu sisään"
   end
   
   def create
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @title = "Edit user"
+    @title = "Muokkaa profiilia"
   end
   
   def update
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profiili päivitetty."
       redirect_to @user
     else
-      @title = "Edit user"
+      @title = "Muokkaa profiilia"
       render 'edit'
     end
   end

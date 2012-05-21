@@ -10,6 +10,9 @@
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
   z-index: 2;
 }
 
@@ -17,9 +20,7 @@
   border:0;
 }
 
-.picture a.small:hover {
-  text-decoration:none; 
-  color:#000000;
+.picture a.hover:hover {
   z-index: 2;
   -webkit-transform:scale(1.7, 1.7);
   -moz-transform:scale(1.7, 1.7);
@@ -38,7 +39,7 @@
     display: block;	
 }
 
-#ads_for_single_category{
+.ads_for_single_category{
 	width: 96%;
 	height: auto;
 	padding: 1%;
@@ -49,12 +50,12 @@
     clear: both;
 }
 
-#ads_for_single_category a{
+.ads_for_single_category a{
 	display: block;	
 }
 
 /*
-#ads_for_single_category :hover{
+.ads_for_single_category :hover{
   	text-decoration: underline;
 }*/
 

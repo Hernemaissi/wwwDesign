@@ -121,7 +121,19 @@ td.main {
   border-radius:         2px;
 }
 
+.clear_both{
+	clear: both;
+}
 
+.pagination {
+	margin: 1%;
+  padding: 1%;
+  	width: 96%;
+	height: auto;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+}
 
 table.profile {
   width: 100%;

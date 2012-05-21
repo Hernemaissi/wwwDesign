@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   def show
     @title = "Temp title"
     @category = Category.find(params[:id])
+    @ads = @category.ads
     respond_to do |format|
       format.js
       format.html {redirect_to root_path}

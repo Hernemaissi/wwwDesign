@@ -1,9 +1,11 @@
 <div class= "ads_for_single_category">
-      <div class="Category_name">
-        <%= link_to c.name, c, :remote => true %>
+     <div class="Category_name">
+        <%= link_to @category.name, @category, :remote => true %>
       </div>
-      <% c.ads.each do |ad| %>
-        <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
+</div>       
+
+      <% @ads.each do |ad| %>
+        <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad, :hover => true} %>
       <% end %>
-</div>
+      
 
