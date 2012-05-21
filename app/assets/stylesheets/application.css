@@ -176,6 +176,11 @@ div.field, div.actions {
   list-style: square;
 }
 
+label.required:after{
+	content:" *";
+	color:#CC0000;
+}
+
 ul.users {
   margin-top: 1em;
 }
