@@ -55,13 +55,14 @@
     	</div>
 	    <div id="sidebar">
 	      <strong>Nimi</strong> <%= @user.name %><br />
-	      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
-	      <strong>Tiedotteet</strong> <%= @user.notifications %><br />
-	     	<div class="new_ad_button round">
-	     		<% if current_user?(@user) %>
-	      		  <%= link_to "Lisää uusi ilmoitus", new_ad_path  %><br />
-	     		<% end %>
-	     	</div>
+	      
+	      <% if current_user?(@user) %>
+	      	<strong>Tiedotteet</strong> <%= @user.notifications %><br />
+		     	<div class="new_ad_button round">
+		      	<%= link_to "Lisää uusi ilmoitus", new_ad_path  %><br />
+		     	</div>	
+	     	<% end %>
+	     	
 	    </div>
 	  </div>  
     </td>
