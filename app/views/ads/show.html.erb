@@ -2,7 +2,7 @@
   
   <div id="show_picture">
   		<div class="show_img">
-		 	 <a href="<%=@ad.image_url%>"><img src="<%=@ad.image_url%>" alt="Ad"/></a>
+		 	 <a href="<%=@ad.image_url%>"><img src="<%=@ad.image_url%>" alt="<%=@ad.title%>"/></a>
 		 	 
 		</div>
 		
@@ -76,7 +76,7 @@
 	          <%= link_to "Pyydä vuokralle", @ad,  :remote => true %>
 	      </div>
 	      <% else %>
-	        Olet ilmoittanut olevasi kiinnostunut tästä ilmoituksesta.
+	        <p>Olet ilmoittanut olevasi kiinnostunut tästä ilmoituksesta.</p>
 	        <div id="unreguest_button" class="round">
 	       		 <%= render 'unrequest' %>
 	        </div>
