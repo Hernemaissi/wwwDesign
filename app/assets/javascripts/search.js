@@ -44,7 +44,7 @@ function filterResults() {
 		'color': color
 	}
 	
-	console.log("filter", data);
+	//console.log("filter", data);
     $.ajax({
     	url: "/search/filter/",
     	data: data,
@@ -67,7 +67,7 @@ $(function() {
         	data: null,
         	dataType: 'html',
         	success: function(data){
-        		console.log("success", data);
+        		//console.log("success", data);
         		$("#results").html(data);
         	}
         });

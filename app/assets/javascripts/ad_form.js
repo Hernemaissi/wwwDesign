@@ -69,14 +69,9 @@ function filterCategories(category_id, $category) {
 
 
 $(function() {
-    $('#test').live("click", function () {  
-        console.log("test");
-    }); 
 	
-console.log("laoded");
   //Ad form: miehet/naiset dropdown changes
   $("select#category_root").change(function() {
-	  console.log("select changed");
     // get subtree and replace selects
     var category_id = $("select#category_root :selected").val();
       $("select#category_children1").empty().hide();
