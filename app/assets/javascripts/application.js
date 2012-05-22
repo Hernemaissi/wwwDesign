@@ -15,7 +15,7 @@ $(function() {
 	$("#gender_tab li").click(function(){
 		if(!$(this).hasClass("selected")){
 			var id = $(this).attr("id");
-
+	
 			$("#gender_tab li").each(function(){
 				$(this).toggleClass('selected');
 			});
@@ -26,4 +26,11 @@ $(function() {
 			dataType: 'script'});
 		}
 	});
+	
+	/* replace broken images */
+	$("img").error(function () {
+		$(this).unbind("error").attr("src", "/assets/not_found.png");
+		$(this).addClass("broken");
+	});
+
 })
