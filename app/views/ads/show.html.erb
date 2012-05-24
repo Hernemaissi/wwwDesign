@@ -56,14 +56,14 @@
 	  </div>
 	  <b>Omistaja:</b> <%=@ad.user.name%>
 	  <% if current_user?(@ad.user) %>
-	    <div class=" button round">
+	    <div id="toggle" class=" button round">
 	        <% if @ad.available %>
 	    	  <%= link_to("Merkitse varatuksi",  toggle_path(:id => @ad.id), :method => :post, :remote => true) %>
 	        <% else %>
 	          <%= link_to("Merkitse vapaaksi",  toggle_path(:id => @ad.id), :method => :post, :remote => true) %>
 	        <% end %>
 	    </div>
-	     <div class="button round">
+	     <div id="edit_button" class="button round">
 	    	<%= link_to "Muokkaa", edit_ad_path(@ad) %>
 	    	
 	    </div>
@@ -72,12 +72,14 @@
 	  <% if signed_in? %>
 	    <% unless current_user?(@ad.user) %>
 	      <% unless current_user.requested?(@ad.id) %>
-	        <div class="button round">
+	        <div id="request_button" class="button round">
 	          <%= link_to "Pyydä vuokralle", @ad,  :remote => true %>
 	      </div>
 	      <% else %>
 	        <p>Olet ilmoittanut olevasi kiinnostunut tästä ilmoituksesta.</p> 
-	       		 <%= render 'unrequest' %>
+	       		<div id="unreguest_button">
+						<%= render 'unrequest' %>
+				</div>	
 	      <% end %>
 	    <% end %>
 	    <%= render 'show_requests' if current_user?(@ad.user) %>
