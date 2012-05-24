@@ -16,7 +16,7 @@
   </div>
   <div id="show_info" class="gender_solid_background round">
 	  <b>Nimi:</b> <%=@ad.title%><br />
-	  <b>Vuokra:</b> <%=number_to_currency(@ad.price, :unit => "€")%><br />
+	  <b>Vuokra:</b> <%=number_to_currency(@ad.price, :unit => "€", :separator => ',', :delimiter => '.')%><br />
 	  
 	  <% if @ad.size? %>
 	  	<b>Koko:</b> <%=@ad.size%><br />
@@ -74,10 +74,11 @@
 	      <% unless current_user.requested?(@ad.id) %>
 	        <div id="request_button" class="button round">
 	          <%= link_to "Pyydä vuokralle", @ad,  :remote => true %>
-	      </div>
+	     		</div>
+	     		<div id="request_form"></div>
 	      <% else %>
 	        <p>Olet ilmoittanut olevasi kiinnostunut tästä ilmoituksesta.</p> 
-	       		<div id="unreguest_button">
+	       		<div id="unrequest_button">
 						<%= render 'unrequest' %>
 				</div>	
 	      <% end %>

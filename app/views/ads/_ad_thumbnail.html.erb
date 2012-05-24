@@ -14,7 +14,7 @@
 	<% end %>
 
 	<div class="rent">
-		<a href="/ads/<%=ad.id%>/"> Vuokra: <%=number_to_currency(ad.price, :unit => "€")%></a>
+		<a href="/ads/<%=ad.id%>/"> Vuokra: <%=number_to_currency(ad.price, :unit => "€", :separator => ',', :delimiter => '.')%></a>
 	</div>
 
 </div>
