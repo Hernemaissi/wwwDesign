@@ -61,9 +61,9 @@ class SearchController < ApplicationController
       @results = @results.in_color(params[:color])
     end
    
-    #if (!params[:parts].nil?)
-    #  @results = @results.find_ads_by_parts(params[:parts])
-    #end
+    if (!params[:parts].nil?)
+      @results = @results.find_ads_by_parts(params[:parts])
+    end
    
     @results = @results.paginate :page => params[:page], :per_page => 24
     respond_to do |format|
