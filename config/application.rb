@@ -49,6 +49,6 @@ module WwwDesign
     
     #Global variables
     CONDITIONS = ["uudenveroinen", "hyvä", "tyydyttävä", "heikko"]
-    COLORS = ["musta", "ruskea", "harmaa", "valkoinen", "sininen", "punainen", "virheä", "muu"] 
+    COLORS = ["musta", "ruskea", "harmaa", "valkoinen", "sininen", "punainen", "vihreä", "muu"] 
   end
 end

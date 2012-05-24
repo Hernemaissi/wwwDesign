@@ -16,7 +16,7 @@
   </div>
   <div id="show_info" class="gender_solid_background round">
 	  <b>Nimi:</b> <%=@ad.title%><br />
-	  <b>Vuokra:</b> <%=@ad.price%><br />
+	  <b>Vuokra:</b> <%=number_to_currency(ad.price, :unit => "€")%><br />
 	  
 	  <% if @ad.size? %>
 	  	<b>Koko:</b> <%=@ad.size%><br />
