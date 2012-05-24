@@ -1,43 +1,70 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'ad_thumbnails' %>
+<% end %>
 <table class="profile" summary="Profile information">
   <tr>
-    <td class="main">
-      <h1>
+    <td class="main">     
+   		<h1>
         <%= @user.name %>
-      </h1>
-      <% if current_user?(@user) %>
-        <div id="sent_requests">
-        Lähetetyt ehdotukset:
-        <% @user.requests.each do |request| %>
-          <div id="sent_request">
-            Olet kiinnostunut ilmoituksesta <%= link_to request.ad.title, request.ad %> Ilmoituksen omistaja: <%= request.ad.user.name %> <br />
-            Ota yhteyttä: <%= request.ad.user.email %>
-          </div>
-        <% end %>
-        </div>
-        <div id="received_requests">
-        Vastaanotetut ehdotukset:
-        <% @user.ads.each do |ad| %>
-          <% ad.requests.each do |request| %>
-            <div id="sent_request">
-              <%= request.sender.name %> on kiinnostunut ilmoituksestasi <%= link_to request.ad.title, request.ad %><br />
-              Ota yhteyttä: <%= request.sender.email %>
-            </div>
-          <% end %>
-        <% end %>
-        </div>
-      <% end %>
-    </td>
-    <td class="sidebar round">
-      <strong>Nimi</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
-      <strong>Tiedotteet</strong> <%= @user.notifications %><br />
-     	<div id="new_ad_button">
-     		<% if current_user?(@user) %>
-      		  <%= link_to "Lisää uusi vaate", new_ad_path  %><br />
-     		<% end %>
-     	</div>
-    </td>
-
+        </h1>
+        
+    	<div class="requests_field round">
+	
+		      <% if current_user?(@user) %>
+		      
+		       <div class='own_ads round'>
+         			Omat ilmoitukset:</br>
+         		 	<% @user.ads.each do |ad| %>
+             		<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad, :hover => false} %>
+         	 		<% end %>
+        	   </div> 
+		      
+		        <div class="sent_requests round">
+			    	Lähetetyt ehdotukset:
+			   	    <% @user.requests.each do |request| %>
+			        <div class="sent_request round">    	
+			            Olet kiinnostunut ilmoituksesta <%= link_to request.ad.title, request.ad %><br /> Ilmoituksen omistaja: <%= request.ad.user.name %> <br />
+			            Ota yhteyttä: <a href="mailto:<%= request.ad.user.email %> 
+			            	?subject=Suit Up! 
+			            	&body=Moi, %0D%0A Olisin kiinnostunut vuokraamaan vaatteen <%= request.ad.title %>.
+			            	%0D%0A%0D%0A** Kirjoita viestisi tähän ** %0D%0A
+		              		%0D%0A______________________________________ %0D%0A
+		              		Suit Up!
+		              		%0D%0A "><%= request.ad.user.email %></a>
+			        </div>
+			      <% end %>
+		        </div>
+		        <div class="received_requests round">
+		        Vastaanotetut ehdotukset:
+		        <% @user.ads.each do |ad| %>
+		          <% ad.requests.each do |request| %>
+		            <div class="received_request round">
+		              <%= request.sender.name %> on kiinnostunut ilmoituksestasi <%= link_to request.ad.title, request.ad %><br />
+		              Ota yhteyttä: <a href="mailto:<%= request.sender.email %> 
+		              	?subject=Suit Up! 
+		              	&body=Moi, %0D%0A Olit kiinnostunut vuokraamaan vaatteen <%= request.ad.title %>.
+		              	%0D%0A%0D%0A** Kirjoita viestisi tähän ** %0D%0A
+		              	%0D%0A______________________________________ %0D%0A
+		              	Suit Up!
+		              	%0D%0A "><%= request.sender.email %></a>
+		            </div>
+		          <% end %>
+		        <% end %>
+		        </div>
+		      <% end %>
+    	</div>
+	    <div id="sidebar">
+	      <strong>Nimi</strong> <%= @user.name %><br />
+	      
+	      <% if current_user?(@user) %>
+	      	<strong>Tiedotteet</strong> <%= @user.notifications %><br />
+		     	<div class="new_ad_button round">
+		      	<%= link_to "Lisää uusi ilmoitus", new_ad_path  %><br />
+		     	</div>	
+	     	<% end %>
+	     	
+	    </div>
+	  </div>  
     </td>
   </tr>
 </table>

@@ -1,15 +1,23 @@
-//Home
-$("#ads").empty();
-<% @categories.each do |c| %>
-	$("#ads").append("<%= escape_javascript(render :partial => 'categories/categoryads', :locals => {:c => c}) %>");
-<% end %>
-
-$("#category_sidebar").html("<%= escape_javascript(render :partial => 'categories/sidebar') %>");
-
-
-//Search
-$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
-filterResults();
-
 //logo
 $("#logo").html("<%= escape_javascript(link_to logo, root_path, :id => "logo") %>");
+
+//if on Home page
+if ($('#category_sidebar').length != 0){
+
+	$("#ads").html("<%= escape_javascript(render :partial => 'pages/ads_by_categories', :locals => {:categories => @categories}) %>");
+	
+	$("#category_sidebar").html("<%= escape_javascript(render :partial => 'categories/sidebar') %>");
+}
+
+
+
+
+//if on search page
+if ($('#searchfilter').length != 0){
+	$("#searchfilter").html("<%= escape_javascript(render :partial => 'search/search_filter', :locals => {:categories => @categories, :current_gender => @current_gender}) %>");
+	filterResults();
+}
+
+
+//switch stylesheets
+$("#switch_style").attr("href", "/assets/" + "<%= escape_javascript(@current_gender) %>" + ".css");

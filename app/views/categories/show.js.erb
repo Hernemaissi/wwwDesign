@@ -1,3 +1,1 @@
-$("#ads").empty();
-
-$("#ads").html("<%= escape_javascript(render :partial => 'categoryads', :locals => {:c => @category}) %>");
+$("#ads").html("<%= escape_javascript(render :partial => 'categoryads', :locals => {:category => @category, :ads => @ads}) %>");

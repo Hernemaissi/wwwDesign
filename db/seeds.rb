@@ -12,26 +12,27 @@
   naiset    = Category.create("name" => "Naiset")
   miehet    = Category.create("name" => "Miehet")
   
-  smokki = miehet.children.create("name" => "Smokki")
-  tummapuku = miehet.children.create("name" => "Tumma puku")
+  bonjourpuku = miehet.children.create("name" => "Bonjour-puku")
   frakki = miehet.children.create("name" => "Frakki")
   saketti = miehet.children.create("name" => "Saketti")
+  smokki = miehet.children.create("name" => "Smokki")
+  tummapuku = miehet.children.create("name" => "Tumma puku")
   kengät = miehet.children.create("name" => "Kengät")
   
 
   naiset1 = naiset.children.create("name" => "Iltapuku")
-  naiset2 = naiset.children.create("name" => "Hääpuku")
   naiset3 = naiset.children.create("name" => "Juhlamekko")
+  naiset2 = naiset.children.create("name" => "Morsiuspuku")
   naiset4 = naiset.children.create("name" => "Kengät")
   
   parts = Part.create([
-    { name: 'Takki', categories: [smokki, tummapuku, frakki, saketti]}, 
-    { name: 'Housut', categories: [smokki, tummapuku, frakki, saketti] }, 
-    { name: 'Liivi', categories: [smokki, tummapuku, frakki, saketti]}, 
-    { name: 'Paita', categories: [smokki, tummapuku, frakki, saketti]}, 
+    { name: 'Takki', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
+    { name: 'Housut', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku] }, 
+    { name: 'Liivi', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
+    { name: 'Paita', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
     { name: 'Solmio', categories: [smokki, tummapuku, saketti]}, 
-    { name: 'Kalvosinnapit', categories: [smokki, tummapuku, frakki, saketti]}, 
-    { name: 'Plastron', categories: [tummapuku, frakki, saketti]}, 
+    { name: 'Kalvosinnapit', categories: [smokki, tummapuku, frakki, saketti, bonjourpuku]}, 
+    { name: 'Plastron', categories: [tummapuku, frakki, saketti, bonjourpuku]}, 
     { name: 'Rinnusnapit', categories: [frakki]}, 
     { name: 'Vyö', categories: [smokki, frakki]}])
   

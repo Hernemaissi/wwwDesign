@@ -1,0 +1,25 @@
+/* User profile page */
+
+.new_ad_button{
+  text-align: center;
+  margin: 10px;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.sent_requests, .received_requests, .sent_request, .received_request, .own_ads{
+	width: 96%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
+	overflow:   auto;
+}
+
+.requests_field{
+	width: 76%;
+	padding: 1%;
+	margin: 1%;
+    float: left;	
+    overflow:   auto;	
+}

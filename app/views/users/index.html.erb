@@ -7,7 +7,7 @@ app/views/users/index.html.erb
     <li>
       <%= link_to user.name, user %>
       <% if current_user.admin? %>
-      | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
+      | <%= link_to "delete", user, :method => :delete, :confirm => "Varmastiko?",
                                 :title => "Delete #{user.name}" %>
   <% end %>
     </li>

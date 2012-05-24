@@ -1,6 +1,7 @@
-#Thu May 03 22:42:28 EEST 2012
+#Mon May 21 19:56:59 EEST 2012
 eclipse.preferences.version=1
 encoding//app/assets/stylesheets/Miehet.css=UTF-8
 encoding//app/assets/stylesheets/Naiset.css=UTF-8
+encoding//app/controllers/ads_controller.rb=UTF-8
 encoding//app/views/ads/_ad_thumbnail.html.erb=UTF-8
 encoding//app/views/pages/home.html.erb=UTF-8

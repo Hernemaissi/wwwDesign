@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class AdsController < ApplicationController
   before_filter :authenticate, :only => [:create, :destroy, :new, :edit, :update, :toggle_available]
 
@@ -8,8 +10,8 @@ class AdsController < ApplicationController
   
   
   def show
-    @title = "Temp title"
     @ad = Ad.find(params[:id])
+    @title = @ad.title
     respond_to do |format|
         format.html
         format.js
@@ -19,7 +21,7 @@ class AdsController < ApplicationController
   def create
     @ad = current_user.ads.build(params[:ad])
     if @ad.save
-      flash[:success] = "New ad posted"
+      flash[:success] = "Uusi ilmoitus lisätty"
       redirect_to @ad
     else
       @title = "Post new ad"
@@ -40,7 +42,7 @@ class AdsController < ApplicationController
     
     @ad = Ad.find(params[:id])
     if @ad.update_attributes(params[:ad])
-      flash[:notice] = "Successfully updated ad."
+      flash[:notice] = "Ilmoitus päivitetty"
       redirect_to @ad
     else
       render :action => 'edit'

@@ -1,9 +1,9 @@
 <ul>
   <% @ad.requests.each do |r| %>
-    <l1>
-      <%= link_to r.sender.name, r.sender %>  on kiinnostunut lainaamaan tuotteesi. Ota yhteyttä häneen sähköpostitse: <%= r.sender.email %>
-      Vuokrauksen alkamispäivä: <% if r.start_date %> <%= r.start_date.strftime("%d/%m/%Y") %><% else %> Vuokrauksen alkamispäivä määrittämättä.<% end %>
-      Vuokrauksen päättymispäivä : <% if r.end_date %> <%= r.end_date.strftime("%d/%m/%Y") %><% else %>  Vuokrauksen lopetuspäviä määrittämättä.<% end %>
-      <br />
+    <li>
+      <p><%= link_to r.sender.name, r.sender %>  on kiinnostunut lainaamaan tuotteesi. Ota yhteyttä häneen sähköpostitse: <%= r.sender.email %></p>
+      <p>Vuokrauksen alkamispäivä: <% if r.start_date %> <%= r.start_date.strftime("%d/%m/%Y") %><% else %> Vuokrauksen alkamispäivä määrittämättä.<% end %><br>
+      Vuokrauksen päättymispäivä : <% if r.end_date %> <%= r.end_date.strftime("%d/%m/%Y") %><% else %>  Vuokrauksen lopetuspäviä määrittämättä.<% end %></p>
     </li>
   <% end %>
+</ul>

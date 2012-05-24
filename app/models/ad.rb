@@ -31,12 +31,12 @@ class Ad < ActiveRecord::Base
     where("price BETWEEN ? AND ?", low, high)
   end
   
-  def self.in_categories(ids)
-    joins(:category).where("category_id IN (?)", ids)
+  def self.find_ads_by_categories(category_ids)
+    joins(:category).where("category_id IN (?)", category_ids)
   end
 
-  def self.with_parts(part_ids)
-    joins(:parts).group("ads.id").select("ads.*").where("parts.id in (?)", part_ids).having("count(*)=#{part_ids.size}")
+  def self.find_ads_by_parts(part_ids)
+    joins(:parts).select("DISTINCT(ads.id), ads.*").where("parts.id in (?)", part_ids).having("count(*)=#{part_ids.size}")
   end
 
   def self.in_condition(condition)

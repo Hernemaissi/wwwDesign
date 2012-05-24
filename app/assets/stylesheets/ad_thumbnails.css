@@ -1,0 +1,107 @@
+.picture {
+  /*width:100px; height: 250px; background-color:#ffffff;*/
+}
+.picture a.small, .picture a.small:visited { 
+  display:block;
+  text-decoration:none; 
+  top:0; 
+  left:0; 
+  border:0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  z-index: 2;
+}
+
+.picture a img {
+  border:0;
+}
+
+.picture a.hover:hover {
+  z-index: 2;
+  -webkit-transform:scale(1.7, 1.7);
+  -moz-transform:scale(1.7, 1.7);
+  -o-transform:scale(1.7, 1.7);
+}
+
+
+#ads{
+	width: 76%;
+    padding: 1%;
+    margin: 1%;
+    float: right;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    display: block;	
+}
+
+.ads_for_single_category{
+	width: 96%;
+	height: auto;
+	padding: 1%;
+	margin: 1%;
+	-moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    clear: both;
+}
+
+.ads_for_single_category a{
+	display: block;	
+}
+
+/*
+.ads_for_single_category :hover{
+  	text-decoration: underline;
+}*/
+
+.ad_pictures {
+	width: 100px;
+	height: 125px;
+    padding: 1%;
+    margin: 1.5% 1% 1% 1%;
+    float: left;
+    text-align:center;
+    font-size: 90%;
+    vertical-align: top;
+    position: relative;
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    border-radius:         2px;
+    display: block;	
+}
+
+.rent{
+	position:relative;
+	top: -15%;
+}
+
+.img_rented{
+
+}
+
+.img_rented a img {
+  border:0;
+}
+
+.img_rented a.small_img_rented, a.small_img_rented:visited{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1;
+	pointer-events: none;  /*mouseclick passes through overlaying div */
+}
+
+.img_rented a.small_img_rented:hover .picture a.small:hover{
+  text-decoration:none; 
+  -webkit-transform:scale(1.7, 1.7);
+  -moz-transform:scale(1.7, 1.7);
+  -o-transform:scale(1.7, 1.7);
+  z-index: 3;
+  pointer-events: none;  /*mouseclick passes through overlaying div */
+}
+

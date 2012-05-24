@@ -6,26 +6,20 @@ body {
 h1, h2, h3 {
 	color: white;
 }
+
 .trans_bg {
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(0, 0, 0);
-	/* RGBa with 0.6 opacity */
 	background: rgba(0, 0, 0, 0.6);
 }
 
+/* Navigation */
+
 #gender_tab li {
 	background: #CCCCCC;
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
-	/* RGBa with 0.6 opacity */
 	background: rgba(80, 80, 80, 0.5);
 	color: 	white;
 }
 
 #gender_tab .selected {
-	/* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(0, 0, 0);
-	/* RGBa with 0.6 opacity */
 	background: rgba(0, 0, 0, 0.6);
 	color: white;
 }
@@ -35,31 +29,26 @@ nav li :hover, #gender_tab :hover{
 	text-decoration: underline;
 }
 
-#ad_pictures {
+/*Pages*/
+
+.ad_pictures, .sent_request, .received_request {
     background: #222222;
-    background: rgb(0, 0, 0);
- 	/* RGBa with 0.6 opacity */
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(60, 60, 60, 0.9);
 }
 
-#ads{ 
+#ads, .requests_field, #category_sidebar, #sidebar, #show_info, #results{ 
     background: #CCCCCC;
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
-	/* RGBa with 0.6 opacity */
 	background: rgba(80, 80, 80, 0.4);
 }
 
-#category_sidebar{
- 	background: #CCCCCC;
-	  /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
-	/* RGBa with 0.6 opacity */
-	background: rgba(80, 80, 80, 0.4);
-}
-
-.Category_name{
+.ads_for_single_category, .sent_requests, .received_requests, .own_ads, .pagination{
 	background: black;
+}
+
+/* Buttons */
+
+a.signin_button, .new_ad_button, #request_button, #unreguest_button, #toggle, #edit_button{
+  background: #529214;
 }
 
 /* Links */
@@ -80,22 +69,6 @@ a:visited {
 
 nav ul li a:visited {
   color: white;
-}
-
-td.sidebar {
-  	background: #CCCCCC;
-	/* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(80, 80, 80);
-	/* RGBa with 0.6 opacity */
-	background: rgba(80, 80, 80, 0.4);
-}
-
-a.signin_button {
-  background: #529214;
-}
-
-#new_ad_button{
-  background: #529214;
 }
 
 #error_explanation {

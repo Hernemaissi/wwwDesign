@@ -1,23 +1,12 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'ad_thumbnails' %>
+<% end %>
 
 <div id="ads">
-<% @categories.each do |c| %>
-  <% unless c.is_root? %>
-    <div class= "ads_for_single_category">
-      <div class="Category_name">
-        <%= link_to c.name, c, :remote => true %>
-      </div>
-      <% c.ads.take(5).each do |ad| %>
-        <%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad} %>
-      <% end %>
-    </div>
-  <% end %>
-<% end %>
+	<%= render :partial => 'pages/ads_by_categories', :locals => {:categories => @categories} %>
 </div>
-
-
 
 <div id="category_sidebar">
-	<h2>Kategoriat</h2>
-<%= render "categories/sidebar" %>
+	<h3>Kategoriat</h3>
+	<%= render "categories/sidebar" %>
 </div>
-
