@@ -5,8 +5,5 @@
     padding: 1%;
     margin: 1%;
     float: left;
-    -moz-border-radius:    2px;
-    -webkit-border-radius: 2px;
-    border-radius:         2px;
     overflow:   auto;
 }

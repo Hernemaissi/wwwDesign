@@ -33,9 +33,6 @@
     padding: 1%;
     margin: 1%;
     float: right;
-    -moz-border-radius:    2px;
-    -webkit-border-radius: 2px;
-    border-radius:         2px;
     display: block;	
 }
 
@@ -44,9 +41,6 @@
 	height: auto;
 	padding: 1%;
 	margin: 1%;
-	-moz-border-radius:    2px;
-    -webkit-border-radius: 2px;
-    border-radius:         2px;
     clear: both;
 }
 
@@ -69,9 +63,6 @@
     font-size: 90%;
     vertical-align: top;
     position: relative;
-    -moz-border-radius:    2px;
-    -webkit-border-radius: 2px;
-    border-radius:         2px;
     display: block;	
 }
 

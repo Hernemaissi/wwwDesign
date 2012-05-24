@@ -8,21 +8,21 @@
         <%= @user.name %>
         </h1>
         
-    	<div class="requests_field round">
+    	<div class="requests_field gender_solid_background round">
 	
 		      <% if current_user?(@user) %>
 		      
-		       <div class='own_ads round'>
+		       <div class='profile_fields gender_middle_background round'>
          			Omat ilmoitukset:</br>
          		 	<% @user.ads.each do |ad| %>
              		<%= render :partial => 'ads/ad_thumbnail', :locals => {:ad => ad, :hover => false} %>
          	 		<% end %>
         	   </div> 
 		      
-		        <div class="sent_requests round">
+		        <div class="profile_fields gender_middle_background round">
 			    	Lähetetyt ehdotukset:
 			   	    <% @user.requests.each do |request| %>
-			        <div class="sent_request round">    	
+			        <div class="profile_fields gender_top_background round">    	
 			            Olet kiinnostunut ilmoituksesta <%= link_to request.ad.title, request.ad %><br /> Ilmoituksen omistaja: <%= request.ad.user.name %> <br />
 			            Ota yhteyttä: <a href="mailto:<%= request.ad.user.email %> 
 			            	?subject=Suit Up! 
@@ -34,11 +34,11 @@
 			        </div>
 			      <% end %>
 		        </div>
-		        <div class="received_requests round">
+		        <div class="profile_fields gender_middle_background round">
 		        Vastaanotetut ehdotukset:
 		        <% @user.ads.each do |ad| %>
 		          <% ad.requests.each do |request| %>
-		            <div class="received_request round">
+		            <div class="profile_fields gender_top_background round">
 		              <%= request.sender.name %> on kiinnostunut ilmoituksestasi <%= link_to request.ad.title, request.ad %><br />
 		              Ota yhteyttä: <a href="mailto:<%= request.sender.email %> 
 		              	?subject=Suit Up! 
@@ -53,12 +53,12 @@
 		        </div>
 		      <% end %>
     	</div>
-	    <div id="sidebar">
+	    <div id="sidebar" class="gender_solid_background round">
 	      <strong>Nimi</strong> <%= @user.name %><br />
 	      
 	      <% if current_user?(@user) %>
 	      	<strong>Tiedotteet</strong> <%= @user.notifications %><br />
-		     	<div class="new_ad_button round">
+		     	<div class="new_ad_button button round">
 		      	<%= link_to "Lisää uusi ilmoitus", new_ad_path  %><br />
 		     	</div>	
 	     	<% end %>

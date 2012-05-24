@@ -65,7 +65,7 @@ class SearchController < ApplicationController
     #  @results = @results.find_ads_by_parts(params[:parts])
     #end
    
-    @results = @results.paginate :page => params[:page], :per_page => 24 
+    @results = @results.paginate :page => params[:page], :per_page => 24
     respond_to do |format|
       format.html { 
         render :partial => 'search/results', :locals => {:results => @results} }

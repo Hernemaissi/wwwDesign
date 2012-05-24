@@ -1,6 +1,6 @@
 
 <% @categories.each do |c| %>
-  	<div class="ads_for_single_category">
+  	<div class="ads_for_single_category gender_middle_background round">
   	  	<% unless c.is_root? %>
 			      <div class="Category_name">
 				        <%= link_to c.name, c, :remote => true %>

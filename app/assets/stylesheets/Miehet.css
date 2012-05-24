@@ -31,24 +31,24 @@ nav li :hover, #gender_tab :hover{
 
 /*Pages*/
 
-.ad_pictures, .sent_request, .received_request {
+.gender_top_background{
     background: #222222;
 	background: rgba(60, 60, 60, 0.9);
 }
 
-#ads, .requests_field, #category_sidebar, #sidebar, #show_info, #results{ 
+.gender_solid_background{ 
     background: #CCCCCC;
 	background: rgba(80, 80, 80, 0.4);
 }
 
-.ads_for_single_category, .sent_requests, .received_requests, .own_ads, .pagination{
+.pagination, .gender_middle_background{
 	background: black;
 }
 
 /* Buttons */
 
-a.signin_button, .new_ad_button, #request_button, #unreguest_button, #toggle, #edit_button{
-  background: #529214;
+.button{
+  background: #999999;
 }
 
 /* Links */
