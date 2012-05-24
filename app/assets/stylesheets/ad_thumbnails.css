@@ -1,6 +1,4 @@
-.picture {
-  /*width:100px; height: 250px; background-color:#ffffff;*/
-}
+
 .picture a.small, .picture a.small:visited { 
   display:block;
   text-decoration:none; 
@@ -48,13 +46,8 @@
 	display: block;	
 }
 
-/*
-.ads_for_single_category :hover{
-  	text-decoration: underline;
-}*/
 
 .ad_pictures {
-	width: 100px;
 	height: 125px;
     padding: 1%;
     margin: 1.5% 1% 1% 1%;
