@@ -1,4 +1,4 @@
 ﻿<%= form_for current_user.requests.find_by_ad_id(@ad),
              :html => { :method => :delete } do |f| %>
-  <div class="actions"><%= f.submit "Peru vuokrauspyyntö", :class => "button round" %></div>
+  <div class="actions"><%= f.submit "Peru vuokrauspyyntö" %></div>
 <% end %>

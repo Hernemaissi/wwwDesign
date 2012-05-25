@@ -7,3 +7,8 @@
     float: left;
     overflow:   auto;
 }
+
+#category_sidebar ul {
+	list-style: none outside none; 
+	margin: 0pt;
+}
