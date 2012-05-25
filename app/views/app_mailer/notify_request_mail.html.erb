@@ -6,4 +6,4 @@
 <p>Alkamispäivämäärä: <% if @request.start_date %> <%= @request.start_date.strftime("%d/%m/%Y") %><% else %> Ei määritelty.<% end %></p>
 <p>Palautuspäivämäärä: <% if @request.end_date %> <%= @request.end_date.strftime("%d/%m/%Y") %><% else %> Ei määritelty.<% end %></p>
 
-<p><%= link_to "Katso sivulta", ad_url(@request.ad) %></p>
+<p><%= link_to "Katso sivulta", ad_url(@request.ad), :host => 'suitup.herokuapp.com' %></p>
