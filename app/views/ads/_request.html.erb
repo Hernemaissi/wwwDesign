@@ -3,5 +3,5 @@
   <div><%= f.hidden_field :ad_id %></div>
   <div> Vuokrauksen alkamispäivä: <br /><%= date_select :request, :start_date %></div>
   <div> Vuokrauksen päättymispäivä: <br /><%= date_select :request, :end_date %></div>
-  <div class="actions"><%= f.submit "Lähetä vuokrauspyyntö" %></div>
+  <div class="actions"><%= f.submit "Lähetä vuokrauspyyntö", :class => "button round" %></div>
 <% end %>

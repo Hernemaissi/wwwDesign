@@ -41,10 +41,12 @@
 }
 
 .button{
-	width: 50%;
+	width: 65%;
 	text-align: center;
   	margin: 2%;
   	padding: 2%;
   	font-size: 120%;
   	font-weight: bold;
+  	color: white;
+  	
 }
